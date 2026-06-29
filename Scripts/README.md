@@ -1,53 +1,24 @@
-# 🚀 Scripts & Commands - PROFESSIONAL LEVEL
+# 📜 Scripts & Techniques Reference
 
-Advanced cybersecurity commands, exploitation techniques, and defensive strategies for authorized security professionals.
+Readable reference guides for cybersecurity techniques — offensive and defensive. All files are in Markdown for easy reading on GitHub.
 
 ## 📑 Contents
 
 ### Offensive Security
-- **[advanced-recon.sh](advanced-recon.sh)** - OSINT & advanced reconnaissance
-- **[exploitation-techniques.sh](exploitation-techniques.sh)** - Vulnerability exploitation methods
-- **[privilege-escalation.sh](privilege-escalation.sh)** - Priv-esc techniques & exploits
-- **[post-exploitation.sh](post-exploitation.sh)** - Post-exploit persistence & exfiltration
+- **[advanced-recon.md](advanced-recon.md)** — OSINT & advanced reconnaissance techniques
+- **[exploitation-techniques.md](exploitation-techniques.md)** — Web, API, and application exploitation methods
+- **[privilege-escalation.md](privilege-escalation.md)** — Linux & Windows privilege escalation techniques
+- **[post-exploitation.md](post-exploitation.md)** — Persistence, lateral movement, and exfiltration
 
-### Defensive Security  
-- **[defensive-hardening.sh](defensive-hardening.sh)** - System hardening & protection
-- **[threat-hunting.sh](threat-hunting.sh)** - Threat hunting & incident response
-- **[malware-analysis.sh](malware-analysis.sh)** - Reverse engineering & malware analysis
+### Defensive Security
+- **[defensive-hardening.md](defensive-hardening.md)** — System hardening, IDS, log monitoring & incident response
 
-### Advanced Techniques
-- **[advanced-networking.sh](advanced-networking.sh)** - Advanced network exploitation
-- **[web-exploitation.sh](web-exploitation.sh)** - Advanced web vulnerabilities
-- **[memory-exploitation.sh](memory-exploitation.sh)** - Buffer overflows & ROP chains
+## ⚠️ Ethical & Legal Requirements
 
-## 🎯 Usage
+All content is for **educational purposes and authorized testing only**.
 
-View any script:
-```bash
-cat advanced-recon.sh
-```
-
-Copy useful commands to your toolkit.
-
-## ⚠️ CRITICAL - LEGAL & ETHICAL REQUIREMENTS
-
-**YOU MUST HAVE:**
-- ✅ Written authorization from system owner
-- ✅ Active penetration testing engagement
-- ✅ Proper certifications (OSCP, CEH, GPEN, etc.)
-- ✅ Insurance/liability coverage
-- ✅ NDA signed
-- ✅ Scope document
-
-**CONSEQUENCES OF UNAUTHORIZED USE:**
-- ❌ Federal criminal charges
-- ❌ 10+ years prison time
-- ❌ $250,000+ fines
-- ❌ Civil lawsuits
-- ❌ Career destruction
-
-**ONLY USE ON:**
-- ✅ Own systems
+**Only use on:**
+- ✅ Your own systems
 - ✅ Authorized lab environments (HackTheBox, TryHackMe)
 - ✅ Paid engagements with signed contracts
 - ✅ CTF competitions
@@ -55,4 +26,3 @@ Copy useful commands to your toolkit.
 ---
 
 **Last Updated:** June 29, 2026
-**For:** Authorized Security Professionals Only
