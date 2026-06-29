@@ -90,12 +90,13 @@ country:NL http.title:"login" → Login pages in Netherlands
 country:US product:"Apache"  → Apache servers in USA
 ```
 
-### Specific Vulnerabilities
+### Specific Vulnerabilities (💰 Paid accounts only)
 ```
 vuln:CVE-2021-44228          → Log4Shell vulnerable systems
 vuln:CVE-2021-26855          → Exchange ProxyLogon
 vuln:CVE-2019-19781          → Citrix vulnerability
 ```
+> ⚠️ `vuln:` filter requires a paid Shodan account ($69/yr). Free accounts get "No results" or an error.
 
 ---
 
