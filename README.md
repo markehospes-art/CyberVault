@@ -34,9 +34,6 @@ CyberVault/
    - Follow the [Networking MOC](MOCs/Networking.md)
    - Study materials in order from basics to advanced
 
-3. **Ready for Labs?**
-   - Check [Labs/](Labs/) for practical exercises
-
 ## 📖 Topics Covered
 
 ### Networking Fundamentals
