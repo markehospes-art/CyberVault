@@ -16,6 +16,7 @@
 | [🏢 Active Directory Quick Ref](CheatSheets/Active-Directory-Quick-Ref.md) | In a Windows network — quick commands |
 | [🔀 Pivoting & Port Forwarding](CheatSheets/Pivoting-Port-Forwarding.md) | Reaching internal machines — Chisel, SSH tunnels |
 | [💥 Buffer Overflow](CheatSheets/Buffer-Overflow.md) | BOF challenge — step-by-step guide |
+| [🔍 Shodan OSINT](CheatSheets/Shodan-OSINT.md) | Find exposed devices & recon targets passively |
 
 ---
 
