@@ -1,223 +1,254 @@
-#!/bin/bash
+# 🔍 Advanced Reconnaissance & OSINT
 
-################################################################################
-# ADVANCED RECONNAISSANCE & OSINT
-# Professional-grade information gathering techniques
-# AUTHORIZED TESTING ONLY!
-################################################################################
+> Professional-grade information gathering techniques.
+> ⚠️ **Authorized testing only!**
 
-echo "========================================"
-echo "ADVANCED RECONNAISSANCE TECHNIQUES"
-echo "========================================"
-echo ""
+---
 
-# ============================================================================
-# PASSIVE RECONNAISSANCE - NO TRAFFIC TO TARGET
-# ============================================================================
+## Passive OSINT — No Traffic to Target
 
-echo "[*] PASSIVE OSINT - Information gathering without touching target"
-echo "---"
+### 1. Shodan
 
-echo "1. Using Shodan (must have API key):"
-echo "   # Find devices/services online"
-echo "   https://www.shodan.io/"
-echo "   # Search filters:"
-echo "   - country:US"
-echo "   - city:'New York'"
-echo "   - port:3306"
-echo "   - Apache"
-echo ""
+Search for internet-connected devices and services:
 
-echo "2. Using Censys:"
-echo "   # Certificate transparency search"
-echo "   https://censys.io/"
-echo "   # Find all subdomains from certs"
-echo ""
+```
+https://www.shodan.io/
+```
 
-echo "3. Using GreyNoise:"
-echo "   # Identify malicious IPs"
-echo "   https://www.greynoise.io/"
-echo ""
+Useful search filters:
+```
+country:US
+city:"New York"
+port:3306
+Apache
+```
 
-echo "4. Google dorking (advanced search):"
-echo "   site:example.com filetype:pdf"
-echo "   site:example.com 'password'"
-echo "   inurl:admin"
-echo "   intitle:'index of'"
-echo "   cache:example.com"
-echo ""
+### 2. Censys
 
-echo "5. Wayback Machine:"
-echo "   https://web.archive.org/"
-echo "   # Find old versions of websites"
-echo "   # Discover old endpoints & functionality"
-echo ""
+Certificate transparency search — find subdomains from SSL certs:
 
-# ============================================================================
-# ADVANCED SUBDOMAIN ENUMERATION
-# ============================================================================
+```
+https://censys.io/
+```
 
-echo "[*] ADVANCED SUBDOMAIN DISCOVERY"
-echo "---"
+### 3. GreyNoise
 
-echo "1. Certificate transparency logs:"
-echo "   # Use tools to parse CT logs"
-echo "   ctfr.py -d example.com  # CTFR tool"
-echo "   certsh -d example.com   # Alternative"
-echo ""
+Identify malicious or scanning IPs:
 
-echo "2. Advanced subfinder:"
-echo "   subfinder -d example.com -all -recursive"
-echo ""
+```
+https://www.greynoise.io/
+```
 
-echo "3. Amass (most comprehensive):"
-echo "   amass enum -d example.com"
-echo "   amass enum -d example.com -src all"
-echo ""
+### 4. Google Dorking
 
-echo "4. Combine multiple tools:"
-echo "   cat domains.txt | while read d; do"
-echo "     subfinder -d \$d -silent"
-echo "     amass enum -d \$d -src crt"
-echo "   done | sort -u"
-echo ""
+Advanced search operators to find exposed data:
 
-echo "5. Subdomain brute force (if needed):"
-echo "   ffuf -w subdomains.txt -u https://FUZZ.example.com -c"
-echo "   massdns -r resolvers.txt -w subdomains.txt example.com"
-echo ""
+```
+site:example.com filetype:pdf
+site:example.com "password"
+inurl:admin
+intitle:"index of"
+cache:example.com
+```
 
-# ============================================================================
-# TECHNOLOGY FINGERPRINTING
-# ============================================================================
+### 5. Wayback Machine
 
-echo "[*] ADVANCED TECHNOLOGY DISCOVERY"
-echo "---"
+Browse old versions of websites and discover archived endpoints:
 
-echo "1. Wappalyzer (detect tech stack):"
-echo "   wappalyzer https://example.com"
-echo ""
+```
+https://web.archive.org/
+```
 
-echo "2. HTTP header analysis:"
-echo "   curl -I https://example.com | grep -i 'server\|x-powered\|x-asp\|x-aspnet'"
-echo ""
+---
 
-echo "3. JavaScript source analysis:"
-echo "   # Download all JS files"
-echo "   curl -s https://example.com | grep -oP 'src=\"\K[^\"]+\.js' | while read js; do"
-echo "     curl -s https://example.com\$js >> collected.js"
-echo "   done"
-echo "   # Analyze for:"
-echo "   - API endpoints"
-echo "   - Private keys/tokens"
-echo "   - Internal IP addresses"
-echo "   - Backend URLs"
-echo ""
+## Advanced Subdomain Enumeration
 
-echo "4. Source code comment mining:"
-echo "   grep -r '// TODO\|FIXME\|HACK\|XXX' *.js"
-echo ""
+### 1. Certificate Transparency Logs
 
-# ============================================================================
-# VULNERABILITY DATABASE RECONNAISSANCE
-# ============================================================================
+```bash
+ctfr.py -d example.com     # CTFR tool
+certsh -d example.com      # Alternative
+```
 
-echo "[*] VULNERABILITY RESEARCH"
-echo "---"
+### 2. Subfinder
 
-echo "1. Search CVE databases:"
-echo "   https://nvd.nist.gov/"
-echo "   https://www.cvedetails.com/"
-echo "   https://www.exploit-db.com/"
-echo ""
+```bash
+subfinder -d example.com -all -recursive
+```
 
-echo "2. Check for known vulnerabilities in identified software:"
-echo "   # If running Apache 2.4.49, check:"
-echo "   searchsploit Apache 2.4.49"
-echo ""
+### 3. Amass (Most Comprehensive)
 
-echo "3. Use vulnerability scanners:"
-echo "   nessus"
-echo "   openvas"
-echo "   qualys"
-echo ""
+```bash
+amass enum -d example.com
+amass enum -d example.com -src all
+```
 
-# ============================================================================
-# NETWORK RECONNAISSANCE
-# ============================================================================
+### 4. Combine Multiple Tools
 
-echo "[*] NETWORK-LEVEL RECONNAISSANCE"
-echo "---"
+```bash
+cat domains.txt | while read d; do
+  subfinder -d $d -silent
+  amass enum -d $d -src crt
+done | sort -u
+```
 
-echo "1. AS number lookup:"
-echo "   whois -h whois.radb.net -- '-i origin AS15169'"
-echo ""
+### 5. Subdomain Brute Force
 
-echo "2. Find all IP ranges:"
-echo "   whois example.com | grep -i 'inetnum\|cidr'"
-echo ""
+```bash
+ffuf -w subdomains.txt -u https://FUZZ.example.com -c
+massdns -r resolvers.txt -w subdomains.txt example.com
+```
 
-echo "3. BGP hijacking research:"
-echo "   https://bgpstream.com/"
-echo ""
+---
 
-echo "4. Passive DNS queries:"
-echo "   # Using SecurityTrails API"
-echo "   curl -H 'apikey: YOUR_API_KEY' https://api.securitytrails.com/v1/domain/example.com/dns"
-echo ""
+## Technology Fingerprinting
 
-# ============================================================================
-# EMAIL & USER RECONNAISSANCE
-# ============================================================================
+### 1. Wappalyzer — Detect Tech Stack
 
-echo "[*] EMAIL & USER DISCOVERY"
-echo "---"
+```bash
+wappalyzer https://example.com
+```
 
-echo "1. Employee finder:"
-echo "   hunter.io - Find company emails"
-echo "   email-format.com - Email pattern detection"
-echo "   clearbit.com - Company & person data"
-echo ""
+### 2. HTTP Header Analysis
 
-echo "2. LinkedIn OSINT:"
-echo "   # Scrape public profiles (carefully)"
-echo "   linkedin2username.py -c 'Company Name'"
-echo ""
+```bash
+curl -I https://example.com | grep -i 'server\|x-powered\|x-asp\|x-aspnet'
+```
 
-echo "3. Username enumeration:"
-echo "   # Common patterns: firstname.lastname, firstnamelastname, etc"
-echo "   # Test against:"
-echo "   - GitHub"
-echo "   - Twitter"
-echo "   - Instagram"
-echo "   - Facebook"
-echo "   - Company email"
-echo ""
+### 3. JavaScript Source Analysis
 
-echo "4. Breach database queries:"
-echo "   https://haveibeenpwned.com/ (API available)"
-echo "   https://breachdirectory.com/"
-echo ""
+```bash
+# Download all JS files and collect them
+curl -s https://example.com | grep -oP 'src="\K[^"]+\.js' | while read js; do
+  curl -s https://example.com$js >> collected.js
+done
+```
 
-# ============================================================================
-# ADVANCED SCANNING
-# ============================================================================
+Look for:
+- API endpoints
+- Private keys / tokens
+- Internal IP addresses
+- Backend URLs
 
-echo "[*] ACTIVE RECONNAISSANCE (With Authorization)"
-echo "---"
+### 4. Source Code Comment Mining
 
-echo "1. Comprehensive nmap enumeration:"
-echo "   nmap -A -sV -sC -O -p- --script vuln 192.168.1.100 -oA report"
-echo ""
+```bash
+grep -r '// TODO\|FIXME\|HACK\|XXX' *.js
+```
 
-echo "2. UDP service discovery:"
-echo "   nmap -sU -top-ports 100 192.168.1.100"
-echo ""
+---
 
-echo "3. Service version exploitation:"
-echo "   nmap --script='*-version' 192.168.1.100"
-echo ""
+## Vulnerability Research
 
-echo "========================================"
-echo "Remember: Authorization is mandatory!"
-echo "========================================"
+### 1. CVE Databases
+
+| Resource | URL |
+|----------|-----|
+| NVD (NIST) | [nvd.nist.gov](https://nvd.nist.gov/) |
+| CVE Details | [cvedetails.com](https://www.cvedetails.com/) |
+| Exploit DB | [exploit-db.com](https://www.exploit-db.com/) |
+
+### 2. Search for Known Vulnerabilities in Identified Software
+
+```bash
+# Example: target running Apache 2.4.49
+searchsploit Apache 2.4.49
+```
+
+### 3. Vulnerability Scanners
+
+| Tool | Type |
+|------|------|
+| Nessus | Commercial |
+| OpenVAS | Open source |
+| Qualys | Cloud-based |
+
+---
+
+## Network-Level Reconnaissance
+
+### 1. AS Number Lookup
+
+```bash
+whois -h whois.radb.net -- '-i origin AS15169'
+```
+
+### 2. Find All IP Ranges
+
+```bash
+whois example.com | grep -i 'inetnum\|cidr'
+```
+
+### 3. BGP Hijacking Research
+
+```
+https://bgpstream.com/
+```
+
+### 4. Passive DNS Queries (SecurityTrails API)
+
+```bash
+curl -H 'apikey: YOUR_API_KEY' https://api.securitytrails.com/v1/domain/example.com/dns
+```
+
+---
+
+## Email & User Discovery
+
+### 1. Employee Finder Tools
+
+| Tool | Purpose |
+|------|---------|
+| [hunter.io](https://hunter.io) | Find company emails |
+| [email-format.com](https://email-format.com) | Email pattern detection |
+| [clearbit.com](https://clearbit.com) | Company & person data |
+
+### 2. LinkedIn OSINT
+
+```bash
+linkedin2username.py -c "Company Name"
+```
+
+### 3. Username Enumeration
+
+Common patterns to test: `firstname.lastname`, `firstnamelastname`, `f.lastname`
+
+Check across platforms:
+- GitHub
+- Twitter / X
+- Instagram
+- Facebook
+- Company email
+
+### 4. Breach Database Queries
+
+| Resource | URL |
+|----------|-----|
+| Have I Been Pwned | [haveibeenpwned.com](https://haveibeenpwned.com/) |
+| Breach Directory | [breachdirectory.com](https://breachdirectory.com/) |
+
+---
+
+## Active Reconnaissance (Requires Authorization)
+
+### 1. Comprehensive Nmap Scan
+
+```bash
+nmap -A -sV -sC -O -p- --script vuln 192.168.1.100 -oA report
+```
+
+### 2. UDP Service Discovery
+
+```bash
+nmap -sU --top-ports 100 192.168.1.100
+```
+
+### 3. Service Version Scripts
+
+```bash
+nmap --script='*-version' 192.168.1.100
+```
+
+---
+
+> ⚠️ Authorization is mandatory before any active reconnaissance.
