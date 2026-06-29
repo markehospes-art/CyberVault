@@ -29,16 +29,6 @@ Organized knowledge pathways:
 
 - [Networking MOC](MOCs/Networking.md) - Network fundamentals and protocols
 
----
-
-## 🧪 Labs & Exercises
-
-Hands-on practical learning:
-
-- [Labs Directory](Labs/) - Coming soon
-
----
-
 ## 🚀 Scripts & Tools
 
 Automation and helper scripts:
@@ -66,8 +56,7 @@ Automation and helper scripts:
 1. **Choose your learning path** from the MOCs
 2. **Read the materials** in suggested order
 3. **Take notes** on key concepts
-4. **Try the labs** to practice
-5. **Review** periodically to reinforce
+4. **Review** periodically to reinforce
 
 ---
 
