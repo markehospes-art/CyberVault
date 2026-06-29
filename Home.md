@@ -16,6 +16,10 @@
 | [🏢 Active Directory Quick Ref](CheatSheets/Active-Directory-Quick-Ref.md) | In a Windows network — quick commands |
 | [🔀 Pivoting & Port Forwarding](CheatSheets/Pivoting-Port-Forwarding.md) | Reaching internal machines — Chisel, SSH tunnels |
 | [💥 Buffer Overflow](CheatSheets/Buffer-Overflow.md) | BOF challenge — step-by-step guide |
+| [🗺️ Nmap](CheatSheets/Nmap.md) | Scan every machine — ports, services, OS detection |
+| [💣 Metasploit](CheatSheets/Metasploit.md) | Find and run exploits, Meterpreter commands |
+| [🕷️ Burp Suite](CheatSheets/Burp-Suite.md) | Intercept web traffic, test SQLi, brute force logins |
+| [🏠 Home Lab Setup](CheatSheets/Home-Lab-Setup.md) | Run vulnerable VMs on your own PC |
 
 
 ---
