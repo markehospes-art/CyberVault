@@ -1,113 +1,118 @@
-# 🔐 CyberVault - Ethical Hacking & Cybersecurity Knowledge Base
+# 🔐 CyberVault — Dashboard
 
-## Overview
-CyberVault is a comprehensive educational repository for cybersecurity professionals and students. It contains structured knowledge, labs, and resources for learning ethical hacking and defensive security.
-
-## 📚 Repository Structure
-
-```
-CyberVault/
-├── README.md                 # This file
-├── Home.md                   # Dashboard & quick links
-├── MOCs/                     # Maps of Contents (Knowledge organization)
-│   └── Networking.md         # Networking MOC
-├── Knowledge/                # Deep learning materials
-│   └── Networking/
-│       ├── OSI-Model.md
-│       ├── TCP-UDP.md
-│       ├── DNS.md
-│       ├── HTTP.md
-│       ├── HTTPS-TLS.md
-│       ├── IP-Addressing.md
-│       └── Subnetting.md
-├── Labs/                     # Hands-on practical exercises
-└── Scripts/                  # Automation & helper scripts
-```
-
-## 🎯 Quick Start
-
-1. **New to Cybersecurity?**
-   - Start with [Knowledge/Networking/OSI-Model.md](Knowledge/Networking/OSI-Model.md)
-   - Read [Home.md](Home.md) for navigation guide
-
-2. **Want to Learn Networking?**
-   - Follow the [Networking MOC](MOCs/Networking.md)
-   - Study materials in order from basics to advanced
-
-## 📖 Topics Covered
-
-### Networking Fundamentals
-- **OSI Model** - Understanding the 7-layer network stack
-- **TCP vs UDP** - Connection-oriented vs connectionless protocols
-- **DNS** - Domain Name System and resolution
-- **HTTP/HTTPS** - Web protocols and security
-- **TLS/SSL** - Encryption and secure communication
-- **IP Addressing** - IPv4 and IPv6
-- **Subnetting** - Network segmentation and design
-
-## ✅ Learning Path
-
-**Beginner Level:**
-1. OSI Model
-2. IP Addressing
-3. TCP vs UDP
-4. DNS
-
-**Intermediate Level:**
-1. HTTP & HTTPS
-2. TLS/SSL Certificates
-3. Subnetting
-4. Network Security Basics
-
-**Advanced Level:**
-1. Network Analysis
-2. Protocol Deep-Dive
-3. Security Implementation
-4. Penetration Testing
-
-## 🛠️ Tools Used
-
-- **Kali Linux** - Penetration testing platform
-- **nmap** - Network scanning
-- **Wireshark** - Network analysis
-- **Burp Suite** - Web security
-- **Metasploit** - Exploitation framework
-
-## ⚖️ Ethical Guidelines
-
-✅ **DO:**
-- Learn on your own systems or authorized lab environments
-- Practice ethical hacking principles
-- Use knowledge defensively
-- Get proper certifications (CEH, OSCP, etc.)
-
-❌ **DON'T:**
-- Scan systems without authorization
-- Hack into external systems
-- Use for malicious purposes
-- Share exploits publicly
-
-## 📝 License
-
-Educational Use Only - For learning purposes within authorized environments.
-
-## 🔗 Resources
-
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [PortSwigger Web Security Academy](https://portswigger.net/web-security)
-- [HackTheBox](https://www.hackthebox.com/)
-- [TryHackMe](https://tryhackme.com/)
-- [Cybrary](https://www.cybrary.it/)
-
-## 📧 Contributing
-
-Contributions welcome! Please ensure:
-- Content is accurate and educational
-- Follows ethical guidelines
-- Is properly documented
-- Links are up-to-date
+> Your personal ethical hacking knowledge base. Start here.
 
 ---
 
-**Last Updated:** June 29, 2026
-**Status:** 🟢 Active & Maintained
+## ⚡ Quick Access — Cheat Sheets
+
+> Open these mid-challenge when you need a fast answer.
+
+| Cheat Sheet | When to use it |
+|-------------|---------------|
+| [🐚 Reverse Shells](CheatSheets/Reverse-Shells.md) | Need a shell — copy the right one-liner |
+| [⬆️ Privilege Escalation Checklist](CheatSheets/Privilege-Escalation-Checklist.md) | Stuck on a machine — run through this list |
+| [💉 SQL Injection Quick Ref](CheatSheets/SQL-Injection-Quick-Ref.md) | Testing a login or parameter — payloads & SQLmap |
+| [🏢 Active Directory Quick Ref](CheatSheets/Active-Directory-Quick-Ref.md) | In a Windows network — quick commands |
+| [🔀 Pivoting & Port Forwarding](CheatSheets/Pivoting-Port-Forwarding.md) | Reaching internal machines — Chisel, SSH tunnels |
+| [💥 Buffer Overflow](CheatSheets/Buffer-Overflow.md) | BOF challenge — step-by-step guide |
+| [🗺️ Nmap](CheatSheets/Nmap.md) | Scan every machine — ports, services, OS detection |
+| [💣 Metasploit](CheatSheets/Metasploit.md) | Find and run exploits, Meterpreter commands |
+| [🕷️ Burp Suite](CheatSheets/Burp-Suite.md) | Intercept web traffic, test SQLi, brute force logins |
+| [🏠 Home Lab Setup](CheatSheets/Home-Lab-Setup.md) | Run vulnerable VMs on your own PC |
+
+
+---
+
+## 📚 Knowledge Base
+
+### 🌐 Networking
+| Topic | Description |
+|-------|-------------|
+| [OSI Model](Knowledge/Networking/OSI-Model.md) | The 7-layer network stack |
+| [TCP vs UDP](Knowledge/Networking/TCP-UDP.md) | Connection vs connectionless protocols |
+| [DNS](Knowledge/Networking/DNS.md) | Domain Name System & resolution |
+| [HTTPS & TLS](Knowledge/Networking/HTTPS-TLS.md) | Encryption & secure communication |
+| [IP Addressing](Knowledge/Networking/IP-Addressing.md) | IPv4, IPv6 |
+| [Subnetting](Knowledge/Networking/Subnetting.md) | Network segmentation & design |
+
+### 🐧 Linux
+| Topic | Description |
+|-------|-------------|
+| [Linux Fundamentals](Knowledge/Linux/Linux-Fundamentals.md) | Commands, permissions, scripting, key directories |
+
+### 🌐 Web Security
+| Topic | Description |
+|-------|-------------|
+| [Web Application Security](Knowledge/Web-Security/Web-Application-Security.md) | Burp Suite, SQLi, XSS, CSRF, IDOR, OWASP Top 10 |
+
+### 🔓 Password Attacks
+| Topic | Description |
+|-------|-------------|
+| [Password Attacks](Knowledge/Password-Attacks/Password-Attacks.md) | Hashcat, John, Hydra, wordlists, Pass-the-Hash |
+
+### 🏢 Active Directory
+| Topic | Description |
+|-------|-------------|
+| [Active Directory](Knowledge/Active-Directory/Active-Directory.md) | BloodHound, Kerberoasting, DCSync, Golden Ticket |
+
+### 🔐 Cryptography
+| Topic | Description |
+|-------|-------------|
+| [Cryptography Basics](Knowledge/Cryptography/Cryptography-Basics.md) | Encoding, hashing, AES, RSA, TLS, CTF toolkit |
+
+### 📡 Wireless
+| Topic | Description |
+|-------|-------------|
+| [Wireless Security](Knowledge/Wireless/Wireless-Security.md) | WPA2 cracking, PMKID, WPS, evil twin |
+
+### 🏁 CTF
+| Topic | Description |
+|-------|-------------|
+| [CTF Methodology](Knowledge/CTF/CTF-Methodology.md) | Boot2Root workflow, checklists, shell upgrading |
+
+---
+
+## 📜 Scripts & Techniques
+
+| Script | Description |
+|--------|-------------|
+| [Advanced Recon](Scripts/advanced-recon.md) | OSINT & passive/active reconnaissance |
+| [Exploitation Techniques](Scripts/exploitation-techniques.md) | Web, API, file upload, deserialization exploits |
+| [Privilege Escalation](Scripts/privilege-escalation.md) | Linux & Windows privesc techniques |
+| [Post Exploitation](Scripts/post-exploitation.md) | Persistence, lateral movement, exfiltration |
+| [Defensive Hardening](Scripts/defensive-hardening.md) | System hardening, IDS, incident response |
+
+---
+
+## 🗺️ Maps of Content
+
+| MOC | Description |
+|-----|-------------|
+| [Networking MOC](MOCs/Networking.md) | Structured learning path through networking topics |
+
+---
+
+## 🎯 Where to Practice
+
+| Platform | Level | Best for |
+|----------|-------|----------|
+| [TryHackMe](https://tryhackme.com) | Beginner | Start here — guided, browser-based |
+| [HackTheBox](https://hackthebox.com) | Intermediate | Realistic machines after THM |
+| [PortSwigger Academy](https://portswigger.net/web-security) | All levels | Best free web hacking labs |
+| [PicoCTF](https://picoctf.org) | Beginner | Free CTF competitions |
+| [CTFtime](https://ctftime.org) | All levels | Find upcoming CTF events |
+| [CryptoHack](https://cryptohack.org) | All levels | Crypto challenges |
+
+## 🎥 Best YouTube Channels (No Reading Required)
+
+| Channel | Style |
+|---------|-------|
+| [NetworkChuck](https://youtube.com/@NetworkChuck) | Energetic, beginner-friendly |
+| [John Hammond](https://youtube.com/@_JohnHammond) | CTF walkthroughs |
+| [IppSec](https://youtube.com/@ippsec) | HackTheBox walkthroughs |
+| [TCM Security](https://youtube.com/@TCMSecurityAcademy) | Full free courses |
+
+---
+
+*Last updated: June 29, 2026*
