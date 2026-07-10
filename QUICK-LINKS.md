@@ -56,7 +56,7 @@ Bookmark this page for instant access to frequently used resources.
 - **Windows:** [PE](Scripts/windows-privilege-escalation.md) | [AD](Knowledge/Active-Directory/Active-Directory.md)
 - **Passwords:** [Cracking](Knowledge/Password-Attacks/Password-Attacks.md)
 - **Crypto:** [Basics](Knowledge/Cryptography/Cryptography-Basics.md)
-- **Networking:** [Fundamentals](Knowledge/Networking/) | [DNS](Knowledge/Networking/DNS.md) | [TCP/UDP](Knowledge/Networking/TCP-UDP.md)
+- **Networking:** [Fundamentals](Knowledge/Networking/) | [DNS](Knowledge/Networking/DNS.md)
 - **OSINT:** [Guide](Knowledge/OSINT/OSINT-Guide.md)
 
 ---
@@ -76,20 +76,6 @@ Bookmark this page for instant access to frequently used resources.
 - [RESOURCES](RESOURCES.md) — External tools & frameworks
 - [HOME](HOME.md) — Main navigation hub
 - [INDEX](INDEX.md) — Everything listed
-
----
-
-## 🔍 Quick Navigation Table
-
-| Need | Go To |
-|------|-------|
-| I'm new | [HOME.md](HOME.md) or [MOCs/Networking.md](MOCs/Networking.md) |
-| Quick command | [CheatSheets/](CheatSheets/) |
-| Deep learning | [Knowledge/](Knowledge/) |
-| Step-by-step | [Scripts/](Scripts/) |
-| Everything | [INDEX.md](INDEX.md) |
-| External tools | [RESOURCES.md](RESOURCES.md) |
-| Questions? | [FAQ.md](FAQ.md) |
 
 ---
 
