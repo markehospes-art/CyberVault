@@ -2,70 +2,84 @@
 
 Bookmark this page for instant access to frequently used resources.
 
-## 🔥 Most Used
+## 🔥 Most Used (Existing Files)
 
 - **[Nmap Cheat Sheet](CheatSheets/Nmap.md)** — Network scanning
 - **[Privilege Escalation Checklist](CheatSheets/Privilege-Escalation-Checklist.md)** — Linux & Windows PE
 - **[Reverse Shells](CheatSheets/Reverse-Shells.md)** — Quick reverse shell payloads
 - **[SQL Injection Ref](CheatSheets/SQL-Injection-Quick-Ref.md)** — SQLi payloads
 - **[Burp Suite](CheatSheets/Burp-Suite.md)** — Web app testing
+- **[Metasploit](CheatSheets/Metasploit.md)** — Exploitation framework
+- **[Buffer Overflow](CheatSheets/Buffer-Overflow.md)** — Binary exploitation
+- **[Home Lab Setup](CheatSheets/Home-Lab-Setup.md)** — Create your lab
+- **[Active Directory Quick Ref](CheatSheets/Active-Directory-Quick-Ref.md)** — AD attacks
 
-## 🎓 Learning
+## 🎓 Learning Paths (MOCs)
 
 - **[Networking MOC](MOCs/Networking.md)** — Start here (beginner-friendly)
-- **[Linux Exploitation MOC](MOCs/Linux-Exploitation.md)** — Linux PE learning path
-- **[Active Directory MOC](MOCs/Active-Directory.md)** — AD attack methodology
+- More MOCs coming soon!
 
-## 🛠️ By Stage
+## 📚 Knowledge Base
+
+### Networking
+- **[Networking](Knowledge/Networking/)** — OSI, TCP/UDP, DNS, IP, Subnetting
+- **[DNS Details](Knowledge/Networking/DNS.md)** — Domain resolution
+- **[TCP vs UDP](Knowledge/Networking/TCP-UDP.md)** — Protocol comparison
+
+### Web Security
+- **[Web Application Security](Knowledge/Web-Security/Web-Application-Security.md)** — OWASP Top 10
+
+### Systems
+- **[Linux Fundamentals](Knowledge/Linux/Linux-Fundamentals.md)** — Linux basics
+- **[Active Directory](Knowledge/Active-Directory/Active-Directory.md)** — AD structure & attacks
+
+### Other
+- **[Password Attacks](Knowledge/Password-Attacks/Password-Attacks.md)** — Cracking & spraying
+- **[Cryptography Basics](Knowledge/Cryptography/Cryptography-Basics.md)** — Encryption fundamentals
+- **[Wireless Security](Knowledge/Wireless/Wireless-Security.md)** — WiFi & wireless attacks
+- **[CTF Methodology](Knowledge/CTF/CTF-Methodology.md)** — CTF approach
+
+## 🛠️ Scripts & Guides
 
 ### Reconnaissance
-- [Advanced Recon](Scripts/advanced-recon.md)
-- [OSINT Guide](Knowledge/OSINT/OSINT-Guide.md)
+- **[Advanced Recon](Scripts/advanced-recon.md)** — OSINT techniques
 
 ### Exploitation
-- [Exploitation Techniques](Scripts/exploitation-techniques.md)
-- [Metasploit](CheatSheets/Metasploit.md)
-- [Buffer Overflow](CheatSheets/Buffer-Overflow.md)
-
-### Privilege Escalation
-- [PE Checklist](CheatSheets/Privilege-Escalation-Checklist.md)
-- [Linux PE](Scripts/linux-pe.md)
-- [Windows PE](Scripts/windows-pe.md)
+- **[Exploitation Techniques](Scripts/exploitation-techniques.md)** — Web, API, file upload
 
 ### Post-Exploitation
-- [Post-Exploitation Guide](Scripts/post-exploitation.md)
-- [Network Pivoting](Scripts/network-pivoting.md)
-- [Persistence Techniques](CheatSheets/Persistence.md)
+- **[Post-Exploitation](Scripts/post-exploitation.md)** — Persistence, C2, persistence
+- **[Privilege Escalation](Scripts/privilege-escalation.md)** — Linux & Windows PE
 
-## 🔐 By Topic
+### Defense
+- **[Defensive Hardening](Scripts/defensive-hardening.md)** — Security best practices
 
-- **Web Security:** [OWASP](Knowledge/Web-Security/Web-Application-Security.md) · [SQLi](CheatSheets/SQL-Injection-Quick-Ref.md) · [XSS](Knowledge/Web-Security/XSS.md)
-- **Linux:** [Fundamentals](Knowledge/Linux/Linux-Fundamentals.md) · [PE](Scripts/linux-pe.md)
-- **Windows:** [Fundamentals](Knowledge/Windows/Windows-Fundamentals.md) · [PE](Scripts/windows-pe.md) · [AD](Knowledge/Active-Directory/Active-Directory.md)
-- **Passwords:** [Cracking](Knowledge/Password-Attacks/Password-Attacks.md) · [Wordlists](Knowledge/Password-Attacks/Wordlist-Generation.md)
-- **Crypto:** [Basics](Knowledge/Cryptography/Cryptography-Basics.md) · [Attacks](Knowledge/Cryptography/Cryptographic-Attacks.md)
+## ❓ Help & Reference
 
-## 🏠 Setup & Practice
-
-- **[Home Lab Setup](CheatSheets/Home-Lab-Setup.md)** — Create your lab
-- **[VulnHub Index](Labs/VulnHub-Index.md)** — Vulnerable VMs
-- **[TryHackMe Notes](Labs/TryHackMe-Notes/)** — Room solutions
-- **[HackTheBox Notes](Labs/HackTheBox-Notes/)** — Machine solutions
-
-## ❓ Help
-
-- **[FAQ](FAQ.md)** — Common questions
+- **[FAQ](FAQ.md)** — Common questions answered
 - **[CONTRIBUTING](CONTRIBUTING.md)** — How to contribute
-- **[RESOURCES](RESOURCES.md)** — External tools & frameworks
+- **[RESOURCES](RESOURCES.md)** — External tools & frameworks (100+ links)
+- **[HOME](HOME.md)** — Main navigation hub
+- **[INDEX](INDEX.md)** — Complete searchable index
 
-## 📊 Full Index
+---
 
-See **[INDEX.md](INDEX.md)** for complete searchable listing.
+## 🔍 Quick Navigation
+
+| Need | Go To |
+|------|-------|
+| **I'm new** | [HOME.md](HOME.md) or [MOCs/Networking.md](MOCs/Networking.md) |
+| **Quick command** | [CheatSheets/](CheatSheets/) |
+| **Deep learning** | [Knowledge/](Knowledge/) |
+| **Step-by-step guide** | [Scripts/](Scripts/) |
+| **Everything listed** | [INDEX.md](INDEX.md) |
+| **External tools** | [RESOURCES.md](RESOURCES.md) |
+| **Questions?** | [FAQ.md](FAQ.md) |
 
 ---
 
 <div align="center">
 
-**Last Accessed:** Most recent searches stored in your browser history
+**[🏠 Home](HOME.md)** · **[📑 Index](INDEX.md)** · **[📚 Resources](RESOURCES.md)**
 
 </div>
