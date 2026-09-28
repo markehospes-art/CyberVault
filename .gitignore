@@ -1,0 +1,41 @@
+# .gitignore
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE config
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local temporary files
+*.tmp
+*.log
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node / JS
+node_modules/
+.npm/
+
+# Environment files
+.env
+.env.*
+
+# Build artifacts
+dist/
+build/
+out/
+coverage/
+
+# Local notes or scratch files
+scratch/
+notes/
