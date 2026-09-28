@@ -25,4 +25,4 @@ All content is for **educational purposes and authorized testing only**.
 
 ---
 
-**Last Updated:** June 29, 2026
+**Last Updated:** September 28, 2026

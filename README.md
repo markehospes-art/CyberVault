@@ -3,8 +3,8 @@
 > A curated cybersecurity knowledge base with practical cheat sheets, structured learning paths, and offensive/defensive security references.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Active-green?style=for-the-badge)]()
-[![Type](https://img.shields.io/badge/Type-Knowledge%20Base-orange?style=for-the-badge)]()
+[![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://github.com/markehospes-art/CyberVault)
+[![Knowledge Base](https://img.shields.io/badge/Type-Knowledge%20Base-orange?style=for-the-badge)](https://github.com/markehospes-art/CyberVault)
 
 ---
 
