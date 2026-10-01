@@ -1,10 +1,10 @@
 # 📘 Knowledge Base Index
 
-This section contains conceptual and reference material for learning how security tools work and how systems behave.
+This section is the conceptual layer of CyberVault. It focuses on understanding how systems, protocols, attacks, and defenses work.
 
 ---
 
-## Topic Areas
+## Main Topic Areas
 
 - [Networking](Networking/README.md)
 - [Linux](Linux/Linux-Fundamentals.md)
@@ -20,8 +20,9 @@ This section contains conceptual and reference material for learning how securit
 
 ## Best Use
 
-Use this section when you want understanding, not just commands. It is the conceptual layer of CyberVault.
+Use this section when you want to understand why a technique works, not just how to run a command.
 
 ---
 
 [Back to README](../README.md)
+

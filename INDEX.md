@@ -1,10 +1,10 @@
 # 📑 CyberVault Index
 
-This is the master map of the repository. Use it to find the section you need quickly.
+This is the master map of the repository. Use it to move quickly between learning, references, and tool guides.
 
 ---
 
-## 1. Quick Access
+## 1) Quick Access
 
 - [README.md](README.md)
 - [HOME.md](HOME.md)
@@ -14,7 +14,7 @@ This is the master map of the repository. Use it to find the section you need qu
 
 ---
 
-## 2. Cheat Sheets
+## 2) Cheat Sheets
 
 - [CheatSheets/README.md](CheatSheets/README.md)
 - [CheatSheets/Command-Reference.md](CheatSheets/Command-Reference.md)
@@ -29,7 +29,7 @@ This is the master map of the repository. Use it to find the section you need qu
 
 ---
 
-## 3. Knowledge Base
+## 3) Knowledge Base
 
 - [Knowledge/README.md](Knowledge/README.md)
 - [Knowledge/Networking/README.md](Knowledge/Networking/README.md)
@@ -44,7 +44,7 @@ This is the master map of the repository. Use it to find the section you need qu
 
 ---
 
-## 4. Scripts and Methodologies
+## 4) Step-by-Step Guides
 
 - [Scripts/README.md](Scripts/README.md)
 - [Scripts/advanced-recon.md](Scripts/advanced-recon.md)
@@ -57,7 +57,7 @@ This is the master map of the repository. Use it to find the section you need qu
 
 ---
 
-## 5. Learning Paths
+## 5) Learning Paths
 
 - [MOCs/README.md](MOCs/README.md)
 - [MOCs/Networking.md](MOCs/Networking.md)
@@ -66,7 +66,7 @@ This is the master map of the repository. Use it to find the section you need qu
 
 ---
 
-## 6. Practice Platforms
+## 6) Practice Platforms
 
 - TryHackMe
 - Hack The Box
@@ -78,3 +78,4 @@ This is the master map of the repository. Use it to find the section you need qu
 ---
 
 [Back to HOME](HOME.md)
+

@@ -1,6 +1,6 @@
 # 🛠️ Scripts Index
 
-This section contains step-by-step workflows and operational guidance for common cybersecurity tasks.
+This section contains step-by-step methodologies and operational workflows for use in labs, assessments, and guided study.
 
 ---
 
@@ -18,8 +18,9 @@ This section contains step-by-step workflows and operational guidance for common
 
 ## Best Use
 
-Use these pages when you want a methodology, not just a random set of commands.
+Use this section when you want a method, process, or guided execution plan rather than isolated commands.
 
 ---
 
 [Back to README](../README.md)
+

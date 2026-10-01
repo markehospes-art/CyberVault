@@ -1,18 +1,18 @@
 # 🧭 CyberVault Home
 
-Welcome to CyberVault. This repository is designed to be a practical reference for cybersecurity learning, offensive testing, and defensive hardening.
+Welcome to CyberVault, a structured and practical cybersecurity knowledge base built for learning, lab work, CTF prep, and defensive review.
 
 ---
 
 ## Start Here
 
-Use the right section for your goal:
-
-- New to cybersecurity? Start with [MOCs/Networking.md](MOCs/Networking.md)
-- Need commands or payloads fast? Use [CheatSheets/README.md](CheatSheets/README.md)
-- Want deeper conceptual learning? Open [Knowledge/README.md](Knowledge/README.md)
-- Need a guided workflow? See [Scripts/README.md](Scripts/README.md)
-- Want the full index? Go to [INDEX.md](INDEX.md)
+| Goal | Best place to begin |
+|---|---|
+| New to cybersecurity | [MOCs/Networking.md](MOCs/Networking.md) |
+| Need command references fast | [CheatSheets/README.md](CheatSheets/README.md) |
+| Want deeper understanding | [Knowledge/README.md](Knowledge/README.md) |
+| Need step-by-step workflows | [Scripts/README.md](Scripts/README.md) |
+| Want the full repo map | [INDEX.md](INDEX.md) |
 
 ---
 
@@ -47,24 +47,26 @@ Use the right section for your goal:
 
 ---
 
-## Skills Covered
+## Skill Areas Covered
 
 - recon and OSINT
-- network scanning
-- web exploitation
-- SQL injection
+- network scanning and enumeration
+- web application security
+- SQL injection and exploitation
 - privilege escalation
-- post-exploitation
-- AD and Windows security
-- defensive monitoring and hardening
+- post-exploitation and persistence
+- Windows and Active Directory security
+- Linux fundamentals and hardening
+- defensive monitoring and incident response
 - CTF preparation and practice
 
 ---
 
 ## Legal Notice
 
-This repository is for educational and authorized security use only. Use it in a controlled lab or with explicit permission.
+This repository is for educational and authorized security use only. Use it responsibly in controlled environments and with explicit permission.
 
 ---
 
-[Read the repo overview](README.md)
+[Return to README](README.md)
+

@@ -1,10 +1,10 @@
-# 🧭 Learning Path Index
+# 🧭 Learning Paths Index
 
-This section is for structured study tracks and guided progression through the main cybersecurity domains.
+This section provides structured tracks to help you study cybersecurity in an organized way.
 
 ---
 
-## Learning Tracks
+## Available Tracks
 
 - [Networking.md](Networking.md)
 - [Linux-Exploitation.md](Linux-Exploitation.md)
@@ -14,8 +14,9 @@ This section is for structured study tracks and guided progression through the m
 
 ## Best Use
 
-Use these MOCs when you want a focused plan rather than isolated topics.
+Use these learning paths when you want a focused progression instead of jumping between unrelated topics.
 
 ---
 
 [Back to README](../README.md)
+

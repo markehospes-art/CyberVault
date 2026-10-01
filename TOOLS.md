@@ -1,10 +1,10 @@
-# 🧰 Tool Catalog
+# 🧰 CyberVault Tool Catalog
 
-This is the main reference for the major cybersecurity tools used across the repo.
+This is the main catalog of the major cybersecurity tools referenced throughout the repository.
 
 ---
 
-## Reconnaissance and OSINT
+## Reconnaissance & OSINT
 - Nmap
 - Masscan
 - Amass
@@ -24,7 +24,7 @@ This is the main reference for the major cybersecurity tools used across the rep
 - Feroxbuster
 - ffuf
 
-## Exploitation and Payloads
+## Exploitation & Payloads
 - Metasploit
 - Msfvenom
 - Searchsploit
@@ -50,7 +50,7 @@ This is the main reference for the major cybersecurity tools used across the rep
 
 ---
 
-## Best references in this repo
+## Useful References in This Repo
 
 - [CheatSheets/README.md](CheatSheets/README.md)
 - [Scripts/README.md](Scripts/README.md)
@@ -60,3 +60,4 @@ This is the main reference for the major cybersecurity tools used across the rep
 ---
 
 [Back to README](README.md)
+
