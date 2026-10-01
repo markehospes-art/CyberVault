@@ -1,8 +1,10 @@
 # 🧭 Learning Path Index
 
-This directory contains the main study tracks and learning paths for CyberVault.
+This section is for structured study tracks and guided progression through the main cybersecurity domains.
 
-## Available Tracks
+---
+
+## Learning Tracks
 
 - [Networking.md](Networking.md)
 - [Linux-Exploitation.md](Linux-Exploitation.md)
@@ -10,9 +12,9 @@ This directory contains the main study tracks and learning paths for CyberVault.
 
 ---
 
-## Recommended Use
+## Best Use
 
-Use these MOCs when you want a guided learning path rather than isolated articles or command references.
+Use these MOCs when you want a focused plan rather than isolated topics.
 
 ---
 

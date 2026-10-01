@@ -1,6 +1,6 @@
 # 🔐 CyberVault
 
-> A clean cybersecurity knowledge base with cheat sheets, learning paths, step-by-step guides, and practical command references for CTFs, authorized labs, and defensive security work.
+> A structured cybersecurity knowledge base for recon, web testing, privilege escalation, post-exploitation, defense, and CTF practice.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://github.com/markehospes-art/CyberVault)
@@ -8,39 +8,75 @@
 
 ---
 
-## 🚨 Legal & Ethical Use
+## ⚠️ Legal and Ethical Notice
 
-CyberVault is for:
+CyberVault is intended for:
 - authorized security testing
-- home lab training
-- CTFs and learning platforms
-- defensive hardening and review
-- educational study of cybersecurity concepts
+- personal labs and training environments
+- CTFs and educational exercises
+- defensive security work and hardening review
+- cybersecurity study and documentation
 
-Do not use this repository to target systems, networks, or organizations without explicit permission.
+Do not use these materials for unauthorized access, malicious activity, or targeting systems without explicit permission.
 
 ---
 
-## 🧭 What This Repository Is
+## 🧭 What This Repository Covers
 
-CyberVault organizes the most important cybersecurity topics into a simple, navigable structure:
+CyberVault is organized to help you move from fundamentals to real-world workflows.
 
-- recon and OSINT workflows
+It includes:
+- reconnaissance and OSINT workflows
 - network scanning and enumeration
 - web application security testing
-- SQL injection and application exploitation
-- privilege escalation guides
-- post-exploitation and persistence
-- Active Directory fundamentals
-- Windows and Linux hardening
-- malware analysis, forensics, and defense
+- SQL injection and API testing references
+- privilege escalation strategies
+- post-exploitation and persistence guidance
+- Active Directory and Windows security concepts
+- Linux and defensive hardening notes
 - CTF and learning-path resources
-
-This is meant to be practical and reference-friendly.
 
 ---
 
-## 🗂️ Repo Layout
+## 🗂️ Main Navigation
+
+- [HOME.md](HOME.md) — landing page and starting point
+- [INDEX.md](INDEX.md) — full repository map
+- [QUICK-LINKS.md](QUICK-LINKS.md) — fast access links
+- [TOOLS.md](TOOLS.md) — major tool catalog
+- [CheatSheets/README.md](CheatSheets/README.md) — command and payload references
+- [Knowledge/README.md](Knowledge/README.md) — concept and theory guides
+- [Scripts/README.md](Scripts/README.md) — step-by-step methodologies
+- [MOCs/README.md](MOCs/README.md) — guided learning paths
+
+---
+
+## 🚀 Recommended Reading Order
+
+1. Read [HOME.md](HOME.md)
+2. Review [INDEX.md](INDEX.md)
+3. Start with [MOCs/Networking.md](MOCs/Networking.md)
+4. Move to [Knowledge/README.md](Knowledge/README.md)
+5. Use [CheatSheets/README.md](CheatSheets/README.md) for commands
+6. Use [Scripts/README.md](Scripts/README.md) for workflows
+
+---
+
+## 🧰 Topic Areas
+
+- Reconnaissance and OSINT
+- Network scanning and enumeration
+- Web application security
+- SQLi, APIs, and app exploitation
+- Linux and Windows privilege escalation
+- Post-exploitation and persistence
+- Active Directory and Kerberos
+- Defensive monitoring and hardening
+- CTF practice and structured learning
+
+---
+
+## 📚 Repository Structure
 
 ```text
 CyberVault/
@@ -56,6 +92,7 @@ CyberVault/
 ├── CODE_OF_CONDUCT.md
 ├── CheatSheets/
 │   ├── README.md
+│   ├── Command-Reference.md
 │   ├── Nmap.md
 │   ├── Reverse-Shells.md
 │   ├── SQL-Injection-Quick-Ref.md
@@ -64,15 +101,14 @@ CyberVault/
 │   ├── Burp-Suite.md
 │   ├── Metasploit.md
 │   ├── Home-Lab-Setup.md
-│   ├── Command-Reference.md
 │   └── ...
 ├── Knowledge/
 │   ├── README.md
 │   ├── Networking/
 │   ├── Linux/
 │   ├── Web-Security/
-│   ├── Cryptography/
 │   ├── Active-Directory/
+│   ├── Cryptography/
 │   ├── Password-Attacks/
 │   ├── CTF/
 │   ├── Wireless/
@@ -94,106 +130,14 @@ CyberVault/
 ├── .github/
 │   └── README.md
 ├── .gitignore
-└── .github/ISSUE_TEMPLATE/
+└── LICENSE
 ```
-
----
-
-## 🚀 Quick Start
-
-### If you're new
-- Start with [HOME.md](HOME.md)
-- Review [INDEX.md](INDEX.md)
-- Read [MOCs/Networking.md](MOCs/Networking.md)
-- Use the [CheatSheets](CheatSheets/README.md)
-
-### If you need commands fast
-- Visit [CheatSheets/Command-Reference.md](CheatSheets/Command-Reference.md)
-- See [QUICK-LINKS.md](QUICK-LINKS.md)
-
-### If you want deeper learning
-- Go to [Knowledge/README.md](Knowledge/README.md)
-- Read [Scripts/README.md](Scripts/README.md)
-- Review [MOCs/README.md](MOCs/README.md)
-
----
-
-## 📚 Main Sections
-
-- [HOME.md](HOME.md) — landing page and navigation hub
-- [INDEX.md](INDEX.md) — complete repo index
-- [QUICK-LINKS.md](QUICK-LINKS.md) — quick-access links
-- [TOOLS.md](TOOLS.md) — major tool catalog and usage overview
-- [CheatSheets/README.md](CheatSheets/README.md) — cheat sheet index
-- [Knowledge/README.md](Knowledge/README.md) — concept-based learning content
-- [Scripts/README.md](Scripts/README.md) — step-by-step guides and methodologies
-- [MOCs/README.md](MOCs/README.md) — learning paths by track
-
----
-
-## 🛠️ Core Topics Covered
-
-### Reconnaissance & enumeration
-- Nmap
-- Masscan
-- Amass
-- Subfinder
-- theHarvester
-- Shodan
-- Netcat
-- Wireshark
-
-### Web security
-- Burp Suite
-- ZAP
-- SQLMap
-- Gobuster
-- Nikto
-- Dirsearch
-- Feroxbuster
-
-### Exploitation
-- Metasploit
-- Msfvenom
-- Searchsploit
-- PowerShell payloads
-- reverse shells
-
-### Privilege escalation
-- Linux PE
-- Windows PE
-- Active Directory abuse
-- credential dumping
-
-### Defensive security
-- log analysis
-- hardening
-- monitoring
-- incident response
-- SIEM concepts
-
----
-
-## 📌 Recommended Reading Order
-
-1. [HOME.md](HOME.md)
-2. [INDEX.md](INDEX.md)
-3. [MOCs/Networking.md](MOCs/Networking.md)
-4. [Knowledge/README.md](Knowledge/README.md)
-5. [CheatSheets/README.md](CheatSheets/README.md)
-6. [Scripts/README.md](Scripts/README.md)
-
----
-
-## ⚖️ Legal Notice
-
-Use this repository responsibly and only in authorized environments. The project is educational and defensive in nature.
 
 ---
 
 ## 📄 License
 
-This repository is licensed under the MIT License. See [LICENSE](LICENSE).
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
 ---
 
@@ -202,4 +146,3 @@ This repository is licensed under the MIT License. See [LICENSE](LICENSE).
 Built for learning. Used responsibly.
 
 </div>
-

@@ -1,6 +1,8 @@
 # 📘 Knowledge Base Index
 
-This section contains deeper conceptual references for networking, Linux, application security, cryptography, and more.
+This section contains conceptual and reference material for learning how security tools work and how systems behave.
+
+---
 
 ## Topic Areas
 
@@ -16,14 +18,9 @@ This section contains deeper conceptual references for networking, Linux, applic
 
 ---
 
-## Suggested Order
+## Best Use
 
-1. Networking fundamentals
-2. Linux fundamentals
-3. Web application security
-4. Active Directory
-5. Password and credential security
-6. CTF and practice workflows
+Use this section when you want understanding, not just commands. It is the conceptual layer of CyberVault.
 
 ---
 

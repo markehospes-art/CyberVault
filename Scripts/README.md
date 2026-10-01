@@ -1,28 +1,25 @@
-# 📜 Scripts & Techniques Reference
+# 🛠️ Scripts Index
 
-Readable reference guides for cybersecurity techniques — offensive and defensive. All files are in Markdown for easy reading on GitHub.
-
-## 📑 Contents
-
-### Offensive Security
-- **[advanced-recon.md](advanced-recon.md)** — OSINT & advanced reconnaissance techniques
-- **[exploitation-techniques.md](exploitation-techniques.md)** — Web, API, and application exploitation methods
-- **[privilege-escalation.md](privilege-escalation.md)** — Linux & Windows privilege escalation techniques
-- **[post-exploitation.md](post-exploitation.md)** — Persistence, lateral movement, and exfiltration
-
-### Defensive Security
-- **[defensive-hardening.md](defensive-hardening.md)** — System hardening, IDS, log monitoring & incident response
-
-## ⚠️ Ethical & Legal Requirements
-
-All content is for **educational purposes and authorized testing only**.
-
-**Only use on:**
-- ✅ Your own systems
-- ✅ Authorized lab environments (HackTheBox, TryHackMe)
-- ✅ Paid engagements with signed contracts
-- ✅ CTF competitions
+This section contains step-by-step workflows and operational guidance for common cybersecurity tasks.
 
 ---
 
-**Last Updated:** September 28, 2026
+## Workflow Guides
+
+- [advanced-recon.md](advanced-recon.md)
+- [exploitation-techniques.md](exploitation-techniques.md)
+- [privilege-escalation.md](privilege-escalation.md)
+- [linux-privilege-escalation.md](linux-privilege-escalation.md)
+- [windows-privilege-escalation.md](windows-privilege-escalation.md)
+- [post-exploitation.md](post-exploitation.md)
+- [defensive-hardening.md](defensive-hardening.md)
+
+---
+
+## Best Use
+
+Use these pages when you want a methodology, not just a random set of commands.
+
+---
+
+[Back to README](../README.md)
