@@ -1,126 +1,184 @@
-# 🗺️ Nmap Cheat Sheet
+# 🔍 Nmap Cheat Sheet
 
-> Run this on every machine first. Always.
+## What is Nmap?
+
+Nmap is a network mapping and host discovery tool used for port scanning, service enumeration, and OS detection.
 
 ---
 
-## Basic Scans
+## Basic Syntax
 
 ```bash
-nmap IP                          # Top 1000 ports, default scan
-nmap -p- IP                      # All 65535 ports (slow but thorough)
-nmap -p 80,443,22 IP             # Specific ports only
-nmap -p 1-1000 IP                # Port range
+nmap [options] target
 ```
 
 ---
 
-## Speed Settings
+## Common Scan Types
+
+### Host Discovery
 
 ```bash
-nmap -T0 IP   # Paranoid — slowest, stealthiest
-nmap -T1 IP   # Sneaky
-nmap -T2 IP   # Polite
-nmap -T3 IP   # Normal (default)
-nmap -T4 IP   # Aggressive — faster, good for CTFs
-nmap -T5 IP   # Insane — fastest, may miss results
+# Ping sweep to find live hosts
+nmap -sn 192.168.1.0/24
+
+# No ping (treat all as online)
+nmap -Pn 192.168.1.0/24
 ```
 
-> Use **-T4** on CTF machines. Use **-T2** or lower when trying to avoid detection.
-
----
-
-## Scan Types
+### Port Scanning
 
 ```bash
-nmap -sS IP   # SYN scan (stealth, requires root) — default with sudo
-nmap -sT IP   # TCP connect scan (no root needed)
-nmap -sU IP   # UDP scan (slow, finds DNS/SNMP/DHCP)
-nmap -sV IP   # Version detection — what software is running
-nmap -sC IP   # Default scripts — extra info, vuln checks
-nmap -O IP    # OS detection
-nmap -A IP    # Everything: -sV -sC -O + traceroute
+# TCP SYN scan (stealth)
+nmap -sS target.com
+
+# TCP connect scan
+nmap -sT target.com
+
+# UDP scan
+nmap -sU target.com
+
+# ACK scan (firewall detection)
+nmap -sA target.com
+
+# Null/FIN/Xmas scans
+nmap -sN target.com
+nmap -sF target.com
+nmap -sX target.com
 ```
 
----
-
-## The Two Commands You'll Use 90% of the Time
+### Port Selection
 
 ```bash
-# Quick — find open ports fast
-nmap -T4 -p- IP
+# Specific ports
+nmap -p 80,443,22 target.com
 
-# Full — after finding ports, get details
-nmap -T4 -sC -sV -p 22,80,443 IP
+# Port range
+nmap -p 1-1000 target.com
+
+# All ports
+nmap -p- target.com
+
+# Top 100 ports
+nmap --top-ports 100 target.com
 ```
 
----
-
-## Output & Saving Results
+### Service Detection
 
 ```bash
-nmap -oN output.txt IP      # Save as normal text
-nmap -oX output.xml IP      # Save as XML (for tools)
-nmap -oG output.gnmap IP    # Greppable format
-nmap -oA output IP          # Save all 3 formats at once
-```
+# Service version detection
+nmap -sV target.com
 
----
+# OS detection
+nmap -O target.com
 
-## Useful Scripts (-sC runs these automatically)
-
-```bash
-nmap --script=vuln IP              # Check for common vulns
-nmap --script=http-enum IP         # Enumerate web directories
-nmap --script=smb-vuln-ms17-010 IP # Check for EternalBlue (MS17-010)
-nmap --script=ftp-anon IP          # Check anonymous FTP login
-nmap --script=ssh-brute IP         # SSH brute force
-nmap --script=default IP           # Same as -sC
-```
-
----
-
-## Scan Multiple Targets
-
-```bash
-nmap 192.168.1.1 192.168.1.2      # Multiple IPs
-nmap 192.168.1.0/24               # Whole subnet
-nmap 192.168.1.1-20               # IP range
-nmap -iL targets.txt              # Read IPs from file
+# Aggressive scan (all)
+nmap -A target.com
 ```
 
 ---
 
-## Firewall / IDS Evasion
+## Output Options
 
 ```bash
-nmap -f IP                  # Fragment packets
-nmap -D RND:10 IP           # Decoy scan (fake source IPs)
-nmap --source-port 53 IP    # Spoof source port (DNS port often allowed)
-nmap -sS --data-length 25 IP  # Add random data to packets
+# Normal output
+nmap -oN output.txt target.com
+
+# XML output
+nmap -oX output.xml target.com
+
+# Grepable output
+nmap -oG output.gnmap target.com
+
+# All formats
+nmap -oA output target.com
 ```
 
 ---
 
-## Common Port Reference
+## NSE Scripts
 
-| Port | Service | What to check |
-|------|---------|---------------|
-| 21 | FTP | Anonymous login, version exploits |
-| 22 | SSH | Version, weak creds |
-| 23 | Telnet | Clear-text, weak creds |
-| 25 | SMTP | Open relay, user enum |
-| 53 | DNS | Zone transfer |
-| 80/443 | HTTP/HTTPS | Web app vulns |
-| 139/445 | SMB | EternalBlue, enum shares |
-| 3306 | MySQL | Default creds, remote access |
-| 3389 | RDP | BlueKeep, brute force |
-| 5900 | VNC | No auth, weak password |
+```bash
+# Default scripts
+nmap --script default target.com
+
+# Vulnerability scripts
+nmap --script vuln target.com
+
+# SMB enumeration
+nmap --script smb-enum-shares target.com
+
+# SSH version detection
+nmap --script ssh-hostkey target.com
+
+# HTTP title grabbing
+nmap --script http-title target.com
+```
 
 ---
 
-## Full Recon One-Liner
+## Timing and Performance
 
 ```bash
-nmap -T4 -A -p- -oN scan.txt IP
+# Timing templates (-T0 to -T5, higher = faster)
+nmap -T4 target.com
+
+# Parallel scans
+nmap --max-parallelism 10 target.com
+
+# Timeout
+nmap --host-timeout 1h target.com
 ```
+
+---
+
+## Evasion Techniques
+
+```bash
+# Fragment packets
+nmap -f target.com
+
+# Use decoys
+nmap -D RND:10 target.com
+
+# Spoofed source port
+nmap -g 53 target.com
+
+# Idle scan
+nmap -sI zombie_ip target.com
+```
+
+---
+
+## Common Workflows
+
+### Quick Scan
+```bash
+nmap -sn 10.10.10.0/24
+```
+
+### Full Service Enumeration
+```bash
+nmap -sS -sV -A -p- 10.10.10.10
+```
+
+### Save Results for Analysis
+```bash
+nmap -sS -sV -A -p- -oA scan_results 10.10.10.10
+```
+
+### Aggressive Scan
+```bash
+nmap -A -Pn --top-ports 1000 target.com
+```
+
+---
+
+## Tips
+
+- Use `-sS` for stealth
+- Use `-sV` to detect service versions
+- Use `-O` for OS fingerprinting (requires root)
+- Use `--script vuln` to check for known vulns
+- Save output in XML for import into other tools
+

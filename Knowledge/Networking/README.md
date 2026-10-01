@@ -1,31 +1,29 @@
-# 📚 Networking Knowledge Base
+# 🌐 Networking Fundamentals
 
-Comprehensive materials for learning networking fundamentals.
+This section covers core networking concepts essential for cybersecurity.
 
-## Topics Covered
+## Contents
 
-### Foundation
-- [OSI Model](OSI-Model.md) - The 7-layer network model
-- [IP Addressing](IP-Addressing.md) - IPv4 and IPv6 addressing
-- [Subnetting](Subnetting.md) - Network segmentation
+### Core Concepts
+- OSI Model
+- IP Addressing
+- Subnetting
+- TCP vs UDP
+- DNS
+- HTTP/HTTPS & TLS
 
 ### Protocols
-- [TCP vs UDP](TCP-UDP.md) - Transport layer protocols
-- [DNS](DNS.md) - Domain name resolution
+- TCP/IP
+- ARP
+- ICMP
+- DHCP
 
-### Web & Security
-- [HTTP](HTTPS-TLS.md) - Web protocol basics
-- [HTTPS/TLS](HTTPS-TLS.md) - Secure communication
+### Security Aspects
+- Firewalls
+- Network segmentation
+- VPNs
+- Proxies
 
-## How to Use
+---
 
-1. Start with [OSI Model](OSI-Model.md)
-2. Follow the recommended learning path in [MOCs/Networking.md](../MOCs/Networking.md)
-3. Read materials sequentially
-4. Practice concepts with real tools
-
-## Quick Links
-
-- [Home](../Home.md)
-- [Learning Path](../MOCs/Networking.md)
-- [Back to Root](../)
+Start with the OSI Model to understand network layers.

