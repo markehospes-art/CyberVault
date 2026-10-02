@@ -1,16 +1,12 @@
 # 🔐 CyberVault
 
-> A complete cybersecurity knowledge base for recon, web testing, exploitation, privilege escalation, defense, forensics, and CTF preparation.
+> A structured cybersecurity learning vault for recon, web testing, exploitation, privilege escalation, defense, and CTF preparation.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://github.com/markehospes-art/CyberVault)
-[![Type](https://img.shields.io/badge/Type-Knowledge%20Base-orange?style=for-the-badge)](https://github.com/markehospes-art/CyberVault)
+CyberVault is organized to help you move from fundamentals to hands-on practice without jumping between unrelated topics. This README now serves as the main entry point and study map for the repository.
 
----
+## Use responsibly
 
-## ⚠️ Use Responsibly
-
-CyberVault is designed for:
+This knowledge base is intended for:
 - authorized testing
 - home lab learning
 - CTF challenges and training platforms
@@ -19,160 +15,69 @@ CyberVault is designed for:
 
 Do not use this repository for unauthorized access, malicious activity, or targeted exploitation.
 
----
+## Start here
 
-## 🧭 Purpose
+If you are new to the repo, start in the following order:
 
-CyberVault is a structured learning vault that helps you understand the most important cybersecurity tools, techniques, and workflows.
+1. Read [docs/getting-started.md](docs/getting-started.md)
+2. Review [docs/study-roadmap.md](docs/study-roadmap.md)
+3. Begin with the first learning track in [learning/README.md](learning/README.md)
+4. Use [CheatSheets/README.md](CheatSheets/README.md) for quick command lookups
+5. Use [Scripts/README.md](Scripts/README.md) for guided workflows
 
-It is organized into four main layers:
-
-- [CheatSheets](CheatSheets/README.md) — command references, payloads, and quick lookups
-- [Knowledge](Knowledge/README.md) — concept-based learning and fundamentals
-- [Scripts](Scripts/README.md) — step-by-step workflows and methodologies
-- [MOCs](MOCs/README.md) — guided learning tracks for structured study
-
----
-
-## 🧱 Core Tool Categories
-
-### 1) Reconnaissance & OSINT
-- Nmap
-- Masscan
-- Amass
-- Subfinder
-- theHarvester
-- Shodan
-- Netcat
-- Wireshark
-
-### 2) Web Security
-- Burp Suite
-- OWASP ZAP
-- SQLMap
-- Gobuster
-- Dirsearch
-- Feroxbuster
-- Nikto
-
-### 3) Exploitation & Payloads
-- Metasploit
-- Msfvenom
-- Searchsploit
-- reverse shells
-- PowerShell payloads
-
-### 4) Privilege Escalation
-- Linux PE tools
-- Windows PE tools
-- Active Directory abuse tools
-- credential dumping tools
-
-### 5) Post-Exploitation & Defense
-- BloodHound
-- Mimikatz
-- Rubeus
-- Responder
-- Suricata
-- Snort
-- Wazuh
-- Auditd
-
----
-
-## 🚀 Quick Start
-
-### If you are new
-1. Start with [HOME.md](HOME.md)
-2. Review [INDEX.md](INDEX.md)
-3. Begin with [MOCs/Networking.md](MOCs/Networking.md)
-
-### If you need commands fast
-- Open [CheatSheets/README.md](CheatSheets/README.md)
-- Check [QUICK-LINKS.md](QUICK-LINKS.md)
-- Use [CheatSheets/Command-Reference.md](CheatSheets/Command-Reference.md)
-
-### If you want deeper understanding
-- Read [Knowledge/README.md](Knowledge/README.md)
-- Follow [Scripts/README.md](Scripts/README.md)
-- Use [MOCs/README.md](MOCs/README.md)
-
----
-
-## 📚 Main Navigation
-
-- [HOME.md](HOME.md) — repository landing page
-- [INDEX.md](INDEX.md) — master index
-- [QUICK-LINKS.md](QUICK-LINKS.md) — short access list
-- [TOOLS.md](TOOLS.md) — major tool catalog
-- [CheatSheets/README.md](CheatSheets/README.md) — command references
-- [Knowledge/README.md](Knowledge/README.md) — conceptual learning
-- [Scripts/README.md](Scripts/README.md) — workflows and methodologies
-- [MOCs/README.md](MOCs/README.md) — guided learning paths
-
----
-
-## 🧩 Repository Structure
+## Repository map
 
 ```text
 CyberVault/
-├── README.md
+├── README.md                             # main entry point + study order
+├── docs/
+│   ├── README.md                         # documentation hub
+│   ├── getting-started.md                # onboarding guidance
+│   ├── study-roadmap.md                  # recommended progression
+│   ├── quick-links.md                    # fast navigation
+│   └── tools-catalog.md                  # major tool catalog
+├── learning/
+│   ├── README.md                         # learning map
+│   ├── networking/README.md              # networking fundamentals
+│   ├── linux/README.md                   # Linux basics
+│   ├── web-security/README.md            # application security
+│   ├── active-directory/README.md        # AD concepts
+│   ├── ctf/README.md                     # CTF methodology
+│   └── ...                               # additional topic guides
+├── CheatSheets/
+│   └── ...                               # quick command / payload references
+├── Knowledge/
+│   └── ...                               # original conceptual content
+├── Scripts/
+│   └── ...                               # procedural workflows and runbooks
+├── MOCs/
+│   └── ...                               # guided study paths
+├── FAQ.md
 ├── HOME.md
 ├── INDEX.md
 ├── QUICK-LINKS.md
 ├── TOOLS.md
-├── FAQ.md
 ├── LICENSE
 ├── SECURITY.md
 ├── CONTRIBUTING.md
 ├── CODE_OF_CONDUCT.md
-├── CheatSheets/
-│   ├── README.md
-│   ├── Command-Reference.md
-│   ├── Nmap.md
-│   ├── Reverse-Shells.md
-│   ├── SQL-Injection-Quick-Ref.md
-│   ├── Privilege-Escalation-Checklist.md
-│   ├── Active-Directory-Quick-Ref.md
-│   ├── Burp-Suite.md
-│   ├── Metasploit.md
-│   ├── Home-Lab-Setup.md
-│   ├── Buffer-Overflow.md
-│   └── Pivoting-Port-Forwarding.md
-├── Knowledge/
-│   ├── README.md
-│   ├── Networking/
-│   ├── Linux/
-│   ├── Web-Security/
-│   ├── Active-Directory/
-│   ├── Cryptography/
-│   ├── Password-Attacks/
-│   ├── CTF/
-│   ├── Wireless/
-│   └── OSINT/
-├── Scripts/
-│   ├── README.md
-│   ├── advanced-recon.md
-│   ├── exploitation-techniques.md
-│   ├── privilege-escalation.md
-│   ├── linux-privilege-escalation.md
-│   ├── windows-privilege-escalation.md
-│   ├── post-exploitation.md
-│   └── defensive-hardening.md
-├── MOCs/
-│   ├── README.md
-│   ├── Networking.md
-│   ├── Linux-Exploitation.md
-│   └── Active-Directory.md
 ├── .github/
-│   └── README.md
 ├── .gitignore
-└── LICENSE
+└── README.md
 ```
 
----
+## Learning layers
 
-## 🧠 Recommended Learning Flow
+The repository is intentionally divided into four layers:
+
+- [CheatSheets](CheatSheets/README.md) — command references, payloads, and fast lookups
+- [Knowledge](Knowledge/README.md) — conceptual explanations and technical fundamentals
+- [Scripts](Scripts/README.md) — step-by-step workflows and methodologies
+- [MOCs](MOCs/README.md) — guided tracks for structured study
+
+The new `docs/` and `learning/` sections provide a cleaner entry path without breaking the original repo layout.
+
+## Recommended learning flow
 
 1. Networking fundamentals
 2. Linux basics and privilege escalation
@@ -180,19 +85,23 @@ CyberVault/
 4. Active Directory and Windows security
 5. Post-exploitation and persistence
 6. Defense, monitoring, and incident response
-7. CTF and practice-based training
+7. CTF practice and challenge methodology
+
+## Quick navigation
+
+- [docs/README.md](docs/README.md)
+- [docs/study-roadmap.md](docs/study-roadmap.md)
+- [docs/quick-links.md](docs/quick-links.md)
+- [learning/README.md](learning/README.md)
+- [CheatSheets/README.md](CheatSheets/README.md)
+- [Knowledge/README.md](Knowledge/README.md)
+- [Scripts/README.md](Scripts/README.md)
+- [MOCs/README.md](MOCs/README.md)
+
+## Legacy structure kept intact
+
+This refactor preserves the original repository layout so existing links and paths continue to work while new navigation layers make the knowledge base easier to follow.
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE).
-
----
-
-<div align="center">
 
 Built for learning. Used responsibly.
-
-</div>
-
